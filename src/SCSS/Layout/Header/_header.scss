@@ -1,0 +1,33 @@
+.header {
+  border-bottom: black solid 1px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__list-container {
+    display: flex;
+    align-items: center;
+  }
+  &__list {
+    display: flex;
+    gap: 2rem;
+  }
+  &__buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-grow: 1;
+  }
+  &__button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  &__svg {
+    width: 2rem;
+    height: 2rem;
+    fill: black;
+    color: black;
+  }
+}
