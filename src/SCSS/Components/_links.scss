@@ -1,0 +1,28 @@
+.link {
+  position: relative;
+
+ font-size: 1.2rem;
+  line-height: 1.5rem;
+  color: black;
+
+}
+
+.link:before {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  top: 1.5rem;
+
+  content: '';
+
+  width: 1px;
+  border: solid 1px transparent;
+
+  transition: all 0.5s ease-in-out;
+}
+
+.link:hover:before {
+  border-color: black;
+  width: 100%;
+  left: 0;
+}

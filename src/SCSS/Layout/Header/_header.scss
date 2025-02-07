@@ -3,31 +3,100 @@
 
   &__container {
     display: flex;
-    justify-content: space-between;
-  }
-  &__list-container {
-    display: flex;
+    justify-content: space-around;
     align-items: center;
+    gap: 2px;
+  }
+  &__logo {
+    width: auto;
+    height: 4rem;
+    background-color: white;
+    border-radius: 50%;
+    padding: 2px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   }
   &__list {
-    display: flex;
-    gap: 2rem;
+    display: none;
+    @media screen and (min-width: $bp-desktop) {
+      display: flex;
+      gap: 2rem;
+    }
+    &.show {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4rem;
+    }
   }
+
+  &__sidebar-container {
+    position: fixed;
+    top: 0;
+    right: -100%;
+
+    width: 70%;
+    height: 100vh;
+
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 1);
+  }
+
+
+  &__sidebar--open {
+    right: 0;
+  }
+  &__burger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+
+    @media screen and (min-width: $bp-desktop) {
+      display: none;
+    }
+  }
+
+
   &__buttons-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    align-self: center;
+    justify-content: center;
+    @media screen and (min-width: $bp-desktop) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6rem;
+    }
   }
   &__button {
     background: none;
     border: none;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
   }
+  &__button:hover {
+    transform: scale(1.5);
+  }
+  &__button:nth-child(1) {
+    fill: lightsteelblue;
+  }
+  &__button:nth-child(2) {
+    fill: green;
+  }
+  &__button:nth-child(3) {
+    fill: steelblue;
+  }
+  &__button--active {
+    fill: yellow;
+  }
+
   &__svg {
     width: 2rem;
     height: 2rem;
-    fill: black;
-    color: black;
   }
 }
