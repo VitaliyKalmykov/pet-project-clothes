@@ -1,21 +1,22 @@
 .link {
   position: relative;
 
- font-size: 1.2rem;
+  font-size: 1.5rem;
   line-height: 1.5rem;
   color: black;
 
+  cursor: pointer;
 }
 
 .link:before {
   position: absolute;
   bottom: 0;
   right: 0;
-  top: 1.5rem;
+  top: 2rem;
 
   content: '';
 
-  width: 1px;
+  width: 1%;
   border: solid 1px transparent;
 
   transition: all 0.5s ease-in-out;
