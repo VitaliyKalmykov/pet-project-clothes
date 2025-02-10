@@ -1,0 +1,10 @@
+.modal {
+  &__call-text-container {
+    padding-bottom: 2rem;
+  }
+  &__call-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

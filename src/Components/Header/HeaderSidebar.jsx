@@ -14,7 +14,7 @@ const HeaderSidebar = ({isSidebarOpen, setIsSidebarOpen}) => {
            >
             <aside
                 onClick={(event) => event.stopPropagation()}
-                className={`header__sidebar`}>
+                className={`header__sidebar ${isSidebarOpen ? 'header__sidebar--open' : ''}`}>
                 <HeaderNavigation/>
             </aside>
         </div>
