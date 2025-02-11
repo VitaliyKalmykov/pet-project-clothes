@@ -5,7 +5,7 @@ import HeaderNavigation from "./HeaderNavigation";
 import HeaderBurgerButton from "./HeaderBurgerButton";
 import HeaderSidebar from "./HeaderSidebar";
 
-const Header = () => {
+const Header = ({setIsModal}) => {
 
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -14,7 +14,7 @@ const Header = () => {
             <div className={'container'}>
                 <div className={'header__container'}>
                     <img className={'header__logo'} src={logo} alt="logo" />
-                    <HeaderButtons/>
+                    <HeaderButtons setIsModal={setIsModal} />
                     <HeaderNavigation/>
                     <HeaderBurgerButton setIsSidebarOpen={setIsSidebarOpen} isSidebarOpen={isSidebarOpen} />
                 </div>

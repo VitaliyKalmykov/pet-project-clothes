@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import symbols from '../../assets/symbol-defs.svg';
 
-const HeaderButtons = () => {
+const HeaderButtons = ({setIsModal}) => {
     const [isVolumeHigh, setIsVolumeHigh] = useState(true); // Стан для перемикання між іконками
 
     const [isLampActive, setIsLampActive] = useState(false); // Стан для перемикання кольору лампи
@@ -35,6 +35,8 @@ const HeaderButtons = () => {
                             :
                             icon.iconId === 'icon-bulb' ? toggleLampColor //додаємо класс до лампи
                                 :
+                                icon.iconId === 'icon-call' ? () => setIsModal(true)
+                                    :
                                 null}
                 >
                     <svg className={"header__svg"}>
