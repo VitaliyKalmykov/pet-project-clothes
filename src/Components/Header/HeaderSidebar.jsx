@@ -10,12 +10,13 @@ const HeaderSidebar = ({isSidebarOpen, setIsSidebarOpen}) => {
     return (
         <div
             onClick={closeSidebar}
-            className={`header__sidebar-container ${isSidebarOpen ? 'header__sidebar-container--open' : ''}`}
-           >
+            className={`header__sidebar-container ${isSidebarOpen ? 'header__sidebar-container--open' : 'visually-hidden'}`}
+        >
             <aside
                 onClick={(event) => event.stopPropagation()}
-                className={`header__sidebar ${isSidebarOpen ? 'header__sidebar--open' : ''}`}>
-                <HeaderNavigation/>
+                className={`header__sidebar ${isSidebarOpen ? 'header__sidebar--open' : ''}`}
+            >
+                <HeaderNavigation />
             </aside>
         </div>
     );

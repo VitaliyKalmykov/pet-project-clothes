@@ -1,9 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-const TextInput = ({ type, id, name, label }) => {
-
-    const [value, setValue] = useState("");
-
+const TextInput = ({ type, id, name, label, value, onChange }) => {
 
     return (
         <div className="text-input__container">
@@ -19,7 +16,7 @@ const TextInput = ({ type, id, name, label }) => {
                 id={id}
                 name={name}
                 value={value}
-                onChange={(e) => setValue(e.target.value)}
+                onChange={onChange}
             />
         </div>
     );
