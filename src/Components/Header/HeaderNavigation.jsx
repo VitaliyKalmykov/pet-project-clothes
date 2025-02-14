@@ -1,14 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const HeaderNavigation = () => {
+const HeaderNavigation = ({closeSidebar }) => {
     return (
         <nav className={'header__navigation'}>
             <ul className={'header__navigation-list'}>
-                <li><a className={'link'}>Store</a></li>
-                <li><a className={'link'}>Wholesale</a></li>
-                <li><a className={'link'}>Our history</a></li>
-                <li><a className={'link'}>Store addresses</a></li>
-                <li><a className={'link'}>Contact us</a></li>
+                <li><Link to="/Store" className={'link'} onClick={closeSidebar}>Store</Link></li>
+                <li><Link to="/Details" className={'link'} onClick={closeSidebar}>Details</Link></li>
+                <li><Link to="/OfflineStores" className={'link'} onClick={closeSidebar}>Offline store's</Link></li>
+                <li><Link to="/CustomOrder" className={'link'} onClick={closeSidebar}>Custom order</Link></li>
+                <li><Link to="/Contact" className={'link'} onClick={closeSidebar}>Contact us</Link></li>
             </ul>
         </nav>
     );
