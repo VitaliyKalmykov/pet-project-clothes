@@ -1,5 +1,5 @@
 import React from 'react';
-import {Routes, Route, useLocation} from "react-router-dom";
+import {Routes, Route, useLocation, Navigate} from "react-router-dom";
 import { motion } from "framer-motion";
 import Store from "./Sections/Store section/Store";
 import Details from "./Sections/Details section/Details";
@@ -21,6 +21,7 @@ const Main = () => {
                 transition={{ duration: 0.5 }}    // Тривалість анімації
             >
                 <Routes location={location}>
+                    <Route path="/" element={<Navigate to="/Store" />} /> {/* Перенаправляє на /Store */}
                     <Route path="/Store" element={<Store />} />
                     <Route path="/Details" element={<Details />} />
                     <Route path="/OfflineStores" element={<OfflineStores />} />

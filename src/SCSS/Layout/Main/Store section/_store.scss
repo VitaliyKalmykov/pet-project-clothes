@@ -1,0 +1,14 @@
+.store {
+  &__container {
+    border: 2px solid black;
+  }
+  &__link{
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    color: black;
+    cursor: pointer;
+  }
+  &__hats-container{
+    text-align: center;
+  }
+}
