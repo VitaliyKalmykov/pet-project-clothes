@@ -9,7 +9,7 @@ const Store = () => {
            <div className={"store__container"}>
             <div className={"store__hats-container"}>
                 <Link to={'/Store__hats'} className={'store__link'}>HATS</Link>
-                <div><StoreClothesHats/></div>
+                <div className={"store__hats-items-wrapper"}><StoreClothesHats/></div>
             </div>
            </div>
           </div>
