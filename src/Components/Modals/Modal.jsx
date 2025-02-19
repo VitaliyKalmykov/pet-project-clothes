@@ -1,6 +1,5 @@
 import React from 'react';
 import ModalCall from "./ModalCall/ModalCall";
-import Button from "../UI/Button";
 
 const Modal = ({setIsModal}) => {
     return (

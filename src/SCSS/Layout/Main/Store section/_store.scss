@@ -1,11 +1,17 @@
 .store {
   &__container {
     border: 2px solid black;
+    padding: 0.5rem;
   }
-  &__link{
-    font-size: 1.5rem;
-    line-height: 1.5rem;
-    color: black;
+
+  &__button-expand{
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
     cursor: pointer;
+  }
+  &__hats-container {
+    text-align: center;
+    width: 100%;
+    border: 2px solid black;
   }
 }

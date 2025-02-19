@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import hatsData from './hatsData';
 import StoreClothesHatsItem from './StoreClothesHatsItem';
 
-const StoreClothesHats = () => {
+const StoreClothesHats = ({isExpanded}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const visibleItems = 4;
     const totalItems = hatsData.length;
@@ -21,6 +21,7 @@ const StoreClothesHats = () => {
         );
     };
 
+    //мапимо об'єкт в змінну
     const visibleHats = hatsData.map((hat, index) => (
         <StoreClothesHatsItem hat={hat} key={index} />
     ));
@@ -30,27 +31,37 @@ const StoreClothesHats = () => {
     const isAtEnd = currentIndex >= totalItems - visibleItems;
 
     return (
-        <div className="store__hats-container">
-            <button
-                onClick={goToPrevious}
-                disabled={isAtStart}  // Вимикаємо кнопку, якщо це перший слайд
-            >
-                Previous
-            </button>
-            <div className="store__hats-list">
+        <div className={`${isExpanded ? 'store-hats__container--expanded' : 'store-hats__container'}`}>
+
+            {/*кнопки каруселі*/}
+            {!isExpanded
+                && (
+                <>
+                    <button
+                        onClick={goToPrevious}
+                        disabled={isAtStart}
+                    >
+                        Previous
+                    </button>
+                    <button
+                        onClick={goToNext}
+                        disabled={isAtEnd}
+                    >
+                        Next
+                    </button>
+                </>
+            )}
+
+            {/*блок з картками*/}
+            <div className={`${isExpanded ? 'store-hats__list--expanded' : 'store-hats__list'}`}>
                 <div
-                    className="store__hats-list-wrapper"
-                    style={{ transform: `translateX(-${currentIndex * (100 / visibleItems)}%)` }}
+                    className={`${isExpanded ? 'store-hats__list-wrapper--expanded' : 'store-hats__list-wrapper'}`}
+                    style={{ transform: isExpanded ? 'none' : `translateX(-${currentIndex * (100 / visibleItems)}%)` }}
                 >
                     {visibleHats}
                 </div>
             </div>
-            <button
-                onClick={goToNext}
-                disabled={isAtEnd}  // Вимикаємо кнопку, якщо це останній слайд
-            >
-                Next
-            </button>
+
         </div>
     );
 };

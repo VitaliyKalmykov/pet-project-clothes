@@ -1,10 +1,28 @@
-.store {
-  &__hats-container {
-    text-align: center;
+.store-hats {
+
+  &__container {
+    position: relative;
+    border: 1px solid black;
+    padding: 1rem 1rem;
+  }
+  &__container--expanded{
+   width: 100%;
+    height: 100%;
+    overflow: auto;
+  }
+  &__list-wrapper--expanded {
+   display: grid;
+    grid-template-columns: 2fr 2fr;
+    overflow: auto;
+
+  }
+  &__list--expanded {
+   height: 100%;
     width: 100%;
+    overflow: auto;
   }
 
-  &__hats-list {
+  &__list {
     overflow: hidden;
     width: 100%;
     &-wrapper {
@@ -14,14 +32,14 @@
     }
   }
 
-  &__hats-item-wrapper {
+  &__item-wrapper {
+    height: 19rem;
     flex: 0 0 25%;
     box-sizing: border-box;
     display: flex;
-    align-items: center;
     justify-content: center;
   }
-  &__hats-item {
+  &__item {
     position: relative;
     width: 15rem;
     height: 15rem;
@@ -29,17 +47,18 @@
     flex-direction: column;
   }
 
-  &__hats-item-text {
+  &__item-text {
     text-align: center;
     padding: 0.5rem 0;
     color: white;
     background: rgba(0, 0, 0, 0.5);
     z-index: 2;
   }
-
-  &__hats-img {
+  &__img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border: 1px solid black;
   }
 }
