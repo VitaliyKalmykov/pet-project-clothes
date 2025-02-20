@@ -116,18 +116,6 @@ const hatsData = [
         season: 'summer',
         gender: 'women',
     },
-    // Unisex - SpringFall
-    {
-        name: 'Tutta Hat',
-        price: 38.00,
-        colors: [tuttaHatFront],
-        images: {
-            front: tuttaHatFront,
-            back: tuttaHatBack,
-        },
-        season: 'springFall',
-        gender: 'unisex',
-    },
     // Unisex - Summer
     {
         name: 'Lense Cap',

@@ -1,0 +1,115 @@
+.store-items {
+  &__container {
+    position: relative;
+    border: 1px solid black;
+    padding: 1rem 1rem;
+  }
+  &__container--expanded{
+    position: relative;
+    padding: 1rem 1rem;
+    width: 100%;
+    height: 100%;
+  }
+  &__list-wrapper--expanded {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto);
+    justify-items: center;
+    overflow: auto;
+  }
+
+  &__list {
+    overflow: hidden;
+    &-wrapper {
+      display: flex;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  //контейнер карточки
+  &__item-wrapper {
+    height: 19rem;
+    flex: 0 0 25%;
+    display: flex;
+    justify-content: center;
+  }
+
+  //карточка
+  &__item {
+    position: relative;
+    width: 15rem;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  //текст карточки
+  &__item-text {
+    text-align: center;
+    padding: 0.5rem 0;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+  }
+
+  //картинка карточки
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid black;
+  }
+
+  //кнопка розширення
+  &__button-expand{
+
+    background: transparent;
+    border: none;
+    fill: red;
+    cursor: pointer;
+
+    &--arrow {
+      border: none;
+      width: 1.5rem;
+      height: 2rem;
+      transition: all 0.3s ease-in-out;
+    }
+    &--arrow-active {
+      transform: rotate(45deg);
+    }
+
+  }
+
+  //кнопки каруселі
+  &__buttons-carousel--left {
+    cursor: pointer;
+    z-index: 50;
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    &-arrow {
+      width: 1.5rem;
+      height: 1.5rem;
+      transform: rotate(180deg);
+    }
+  }
+  &__buttons-carousel--right {
+    z-index: 50;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    &-arrow {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+}

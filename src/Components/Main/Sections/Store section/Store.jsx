@@ -1,25 +1,27 @@
-import React, {useState} from 'react';
-import StoreClothesHats from "./Clothes/Hats/StoreClothesHats";
-import Button from "../../../UI/Button";
+import React from 'react';
+import StoreClothes from "./Clothes/StoreClothes";
+import hatsData from './Clothes/Hats/hatsData';
+// import hoodiesData from './hoodiesData';
+// import shoesData from './shoesData';
+// import pantsData from './pantsData';
 
 const Store = () => {
 
-    const [isExpanded, setIsExpanded] = useState(false);
-    const handleExpand = () => {
-        setIsExpanded(!isExpanded); // Перемикаємо стан розширення
-    };
-
     return (
-        <section className={"store"}>
-          <div className={"container"}>
-           <div className={"store__container"}>
-            <div className={"store__hats-container"}>
-                <Button onClick={handleExpand} className={"store__button-expand"} type={"button"}>HATS</Button>
-               <StoreClothesHats isExpanded={isExpanded} />
+        <div className={'container'}>
+            <div className={'store__container'}>
+                <StoreClothes itemsData={hatsData} />
             </div>
-           </div>
-          </div>
-        </section>
+            <div className={'store__container'}>
+                <StoreClothes itemsData={hatsData} />
+            </div>
+            <div className={'store__container'}>
+                <StoreClothes itemsData={hatsData} />
+            </div>
+            <div className={'store__container'}>
+                <StoreClothes itemsData={hatsData} />
+            </div>
+        </div>
     );
 };
 
