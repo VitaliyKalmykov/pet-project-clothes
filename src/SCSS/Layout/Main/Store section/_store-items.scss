@@ -3,17 +3,21 @@
     position: relative;
     border: 1px solid black;
     padding: 1rem 1rem;
+    text-align: center;
   }
   &__container--expanded{
+    text-align: center;
     position: relative;
     padding: 1rem 1rem;
     width: 100%;
     height: 100%;
   }
+  &__title {
+    margin-bottom: 1rem;
+  }
   &__list-wrapper--expanded {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, auto);
+    grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     overflow: auto;
   }
@@ -27,43 +31,12 @@
     }
   }
 
-  //контейнер карточки
-  &__item-wrapper {
-    height: 19rem;
-    flex: 0 0 25%;
-    display: flex;
-    justify-content: center;
-  }
-
-  //карточка
-  &__item {
-    position: relative;
-    width: 15rem;
-    height: 15rem;
-    display: flex;
-    flex-direction: column;
-  }
-
-  //текст карточки
-  &__item-text {
-    text-align: center;
-    padding: 0.5rem 0;
-    color: white;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 2;
-  }
-
-  //картинка карточки
-  &__img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border: 1px solid black;
-  }
-
   //кнопка розширення
   &__button-expand{
+
+    position: absolute;
+    left: 0.5rem;
+    top: 0.3rem;
 
     background: transparent;
     border: none;
@@ -91,7 +64,6 @@
     top: 50%;
     border: none;
     background: transparent;
-    cursor: pointer;
     &-arrow {
       width: 1.5rem;
       height: 1.5rem;

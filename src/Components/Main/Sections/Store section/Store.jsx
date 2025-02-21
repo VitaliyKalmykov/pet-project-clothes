@@ -10,7 +10,7 @@ const Store = () => {
     return (
         <div className={'container'}>
             <div className={'store__container'}>
-                <StoreClothes itemsData={hatsData} />
+                <StoreClothes itemsData={hatsData} title={'HATS'} />
             </div>
             <div className={'store__container'}>
                 <StoreClothes itemsData={hatsData} />

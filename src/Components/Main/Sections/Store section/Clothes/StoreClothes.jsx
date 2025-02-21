@@ -3,7 +3,7 @@ import StoreClothesItem from './StoreClothesItem';
 import Button from "../../../../UI/Button";
 import symbolDefs from '../../../../../assets/symbol-defs.svg';
 
-const StoreClothes = ({ itemsData }) => {
+const StoreClothes = ({ itemsData, title }) => {
 
     //стан розширення
     const [isExpanded, setIsExpanded] = useState(false);
@@ -12,7 +12,7 @@ const StoreClothes = ({ itemsData }) => {
 
     //карусель
     const [currentIndex, setCurrentIndex] = useState(0);
-    const visibleItems = 4;
+    const visibleItems = 3;
     const totalItems = itemsData.length;
 
     //карусель минулий слайд
@@ -41,16 +41,20 @@ const StoreClothes = ({ itemsData }) => {
     return (
         <div className={`${isExpanded ? 'store-items__container--expanded' : 'store-items__container'}`}>
 
-            <Button
-                onClick={() => setIsExpanded(!isExpanded)}
-                type={'button'}
-                className={'store-items__button-expand'}>
+            <h2 className={'store-items__title'}>{title}</h2>
 
-                    <svg className={`store-items__button-expand--arrow ${isExpanded ? 'store-items__button-expand--arrow-active' : ""}`}>
-                        <use xlinkHref={`${symbolDefs}#icon-arrow`} />
-                    </svg>
 
-            </Button>
+               <Button
+                   onClick={() => setIsExpanded(!isExpanded)}
+                   type={'button'}
+                   className={'store-items__button-expand'}>
+
+                   <svg className={`store-items__button-expand--arrow ${isExpanded ? 'store-items__button-expand--arrow-active' : ""}`}>
+                       <use xlinkHref={`${symbolDefs}#icon-arrow`} />
+                   </svg>
+
+               </Button>
+
 
             {!isExpanded && (
                 <div>
