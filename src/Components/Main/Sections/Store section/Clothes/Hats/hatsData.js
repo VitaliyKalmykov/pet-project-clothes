@@ -78,7 +78,7 @@ const hatsData = [
         colors: [knittedHatFront],
         images: {
             front: knittedHatFront,
-            back: knittedHatBack,
+            side: knittedHatBack,
         },
         season: 'springFall',
         gender: 'women',
@@ -100,7 +100,7 @@ const hatsData = [
         colors: [tuttaHatFront],
         images: {
             front: tuttaHatFront,
-            back: tuttaHatBack,
+            side: tuttaHatBack,
         },
         season: 'springFall',
         gender: 'women',
@@ -158,7 +158,7 @@ const hatsData = [
         colors: [winterFleeceHatFront],
         images: {
             front: winterFleeceHatFront,
-            inside: winterFleeceHatInside,
+            side: winterFleeceHatInside,
         },
         season: 'winter',
         gender: 'unisex',

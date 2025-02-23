@@ -1,9 +1,7 @@
 import React from 'react';
 import StoreClothes from "./Clothes/StoreClothes";
 import hatsData from './Clothes/Hats/hatsData';
-// import hoodiesData from './hoodiesData';
-// import shoesData from './shoesData';
-// import pantsData from './pantsData';
+import hoodiesData from "./Clothes/Hoodies/hoodiesData";
 
 const Store = () => {
 
@@ -13,7 +11,7 @@ const Store = () => {
                 <StoreClothes itemsData={hatsData} title={'HATS'} />
             </div>
             <div className={'store__container'}>
-                <StoreClothes itemsData={hatsData} />
+                <StoreClothes itemsData={hoodiesData} title={'Hoodies'} />
             </div>
             <div className={'store__container'}>
                 <StoreClothes itemsData={hatsData} />

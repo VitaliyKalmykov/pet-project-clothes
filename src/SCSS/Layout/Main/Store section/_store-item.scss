@@ -21,11 +21,16 @@
   }
   //текст карточки
   &__item-text {
+    opacity: 0;
     text-align: center;
     padding: 0.5rem;
     color: white;
     background: rgba(0, 0, 0, 0.5);
     z-index: 2;
+    transition: opacity 0.3s ease;
+  }
+  &:hover &__item-text {
+    opacity: 1;
   }
 
   //ціна
