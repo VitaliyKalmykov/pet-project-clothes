@@ -21,7 +21,7 @@ const StoreClothesItem = ({item, index}) => {
               />
               <div className={'store-item__buttons'}>
                   <Button className={'store-item__button'} type={'button'}>Add to cart</Button>
-                  <Button className={'store-item__button'} type={'button'}>Will the clothes fit?</Button>
+                  <Button className={'store-item__button'} type={'button'}>Look more</Button>
               </div>
           </article>
       </div>
