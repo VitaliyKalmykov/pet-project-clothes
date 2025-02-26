@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import StoreClothesItem from './StoreClothesItem';
 import Button from "../../../../UI/Button";
 import symbolDefs from '../../../../../assets/symbol-defs.svg';
@@ -12,8 +12,27 @@ const StoreClothes = ({ itemsData, title }) => {
 
     //карусель
     const [currentIndex, setCurrentIndex] = useState(0);
-    const visibleItems = 3;
     const totalItems = itemsData.length;
+    const [visibleItems, setVisibleItems] = useState(3);
+
+
+    //адаптив для каруселі
+    useEffect(() => {
+        const updateVisibleItems = () => {
+            if (window.innerWidth <= 480) {
+                setVisibleItems(1);
+            }
+            else if (window.innerWidth <= 768) {
+                setVisibleItems(2);
+            }
+            else {
+                setVisibleItems(3);
+            }
+        }
+        updateVisibleItems();
+        window.addEventListener('resize', updateVisibleItems);
+        return () => window.removeEventListener('resize', updateVisibleItems);
+    }, [])
 
     //карусель минулий слайд
     const goToPrevious = () => {
