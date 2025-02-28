@@ -1,5 +1,6 @@
 import React from 'react';
 import StoreClothes from "./Clothes/StoreClothes";
+import StoreFilter from './Filter/StoreFilter'
 import hatsData from './Clothes/Hats/hatsData';
 import hoodiesData from "./Clothes/Hoodies/hoodiesData";
 import pantsData from "./Clothes/Pants/pantsData";
@@ -11,6 +12,9 @@ const Store = () => {
 
     return (
         <div className={'container'}>
+
+            <StoreFilter/>
+
             <div className={'store__container'}>
                 <StoreClothes itemsData={hatsData} title={'Hats'} />
             </div>

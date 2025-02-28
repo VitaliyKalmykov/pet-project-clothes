@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import TextInput from "../../UI/TextInput";
 import Button from "../../UI/Button";
+import CheckboxInput from "../../UI/CheckboxInput";
 
 const ModalCallForm = () => {
 
@@ -144,14 +145,13 @@ const ModalCallForm = () => {
            {/*Чєкбокс*/}
             <div className={'modal__call-form__checkbox-container'}>
            <div className="modal__call-form__checkbox-wrapper">
-               <input
-                   onChange={handleChange}
-                   checked={formData.dataProcessing}
-                   type="checkbox"
+               <CheckboxInput
                    id="dataProcessing"
                    name="dataProcessing"
+                   label="I consent to processing my personal data"
+                   checked={formData.dataProcessing}
+                   onChange={handleChange}
                />
-               <label htmlFor={"dataProcessing"}>I consent to processing my personal data </label>
            </div>
            {errors.dataProcessing && <span className="modal__call-form__error">
                  {errors.dataProcessing}

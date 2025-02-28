@@ -1,0 +1,11 @@
+.store-filter {
+  &__button {
+    width: 100%;
+    font-size: 2rem;
+    border-radius: 0;
+  }
+  &__container {
+    display: flex;
+    justify-content: space-around;
+  }
+}
