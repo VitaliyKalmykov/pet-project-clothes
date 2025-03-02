@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 import RadioInput from "../../../../../UI/RadioInput";
 
-const StoreFilterSeason = () => {
+const StoreFilterSeason = ({filters, setFilters}) => {
 
-    const [selectedOptionSeason, setSelectedOptionSeason] = useState('');
-
+    const handleSeasonChange = (event) => {
+        setFilters((prev) => ({ ...prev, season: event.target.value }));
+    };
     return (
         <div>
             <h2>Season</h2>
@@ -17,8 +18,8 @@ const StoreFilterSeason = () => {
                         {value: 'summer', label: 'Summer'}
                     ]
                 }
-                selectedValue={selectedOptionSeason}
-                onChange={(e) => setSelectedOptionSeason(e.target.value)}
+                selectedValue={filters.season}
+                onChange={handleSeasonChange}
             />
         </div>
     );

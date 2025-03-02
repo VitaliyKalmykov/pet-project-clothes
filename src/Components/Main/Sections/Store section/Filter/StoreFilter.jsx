@@ -3,8 +3,19 @@ import Button from "../../../../UI/Button";
 import StoreFilterItems from "./StoreFilterItems";
 import symbols from '../../../../../assets/symbol-defs.svg';
 
-const StoreFilter = () => {
+const StoreFilter = ({filters, setFilters}) => {
+
     const [isFiltersOpen, setIsFiltersOpen] = useState(false);
+
+    //зброс фільтрів
+    const resetFilters = () => {
+        setFilters({
+            gender: "",
+            priceRange: [0, 1000],
+            season: "",
+            search: "",
+        });
+    };
 
     return (
         <div className="store-filter">
@@ -19,7 +30,10 @@ const StoreFilter = () => {
                 </svg>
             </Button>
             <div className={`store-filter__items ${isFiltersOpen ? 'store-filter__items--open' : ''}`}>
-                <StoreFilterItems />
+                <StoreFilterItems filters={filters} setFilters={setFilters} />
+                <Button onClick={resetFilters} type="button">
+                    Reset Filters
+                </Button>
             </div>
         </div>
     );

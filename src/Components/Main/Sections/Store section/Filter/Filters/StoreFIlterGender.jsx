@@ -1,9 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 import RadioInput from "../../../../../UI/RadioInput";
 
-const StoreFIlterGender = () => {
+const StoreFilterGender = ({filters, setFilters}) => {
 
-    const [selectedOptionGender, setSelectedOptionGender] = useState('');
+    const handleGenderChange = (event) => {
+        setFilters((prev) => ({...prev, gender: event.target.value}));
+    }
 
     return (
         <div>
@@ -12,16 +14,16 @@ const StoreFIlterGender = () => {
                 name='gender'
                 options={
                     [
-                        {value: 'male', label: 'Male'},
-                        {value: 'female', label: 'Female'},
+                        {value: 'men', label: 'Male'},
+                        {value: 'women', label: 'Female'},
                         {value: 'unisex', label: 'Unisex'}
                     ]
                 }
-                selectedValue={selectedOptionGender}
-                onChange={(e) => setSelectedOptionGender(e.target.value)}
+                selectedValue={filters.gender}
+                onChange={handleGenderChange}
             />
         </div>
     );
 };
 
-export default StoreFIlterGender;
+export default StoreFilterGender;
