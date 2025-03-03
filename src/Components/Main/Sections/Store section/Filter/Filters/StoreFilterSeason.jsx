@@ -14,7 +14,7 @@ const StoreFilterSeason = ({filters, setFilters}) => {
                 options={
                     [
                         {value: 'winter', label: 'Winter'},
-                        {value: 'Fall/Spring', label: 'Fall/Spring'},
+                        {value: 'fall/spring', label: 'Fall/Spring'},
                         {value: 'summer', label: 'Summer'}
                     ]
                 }

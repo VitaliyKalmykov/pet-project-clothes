@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import Button from "../../../../UI/Button";
 
-const StoreClothesItem = ({item, index}) => {
+const StoreClothesItem = ({item}) => {
 
     const [imgSrc, setImgSrc] = useState(item.images.front);
 
 
     return (
-      <div key={index} className={"store-item__item-wrapper"}>
+      <div key={item.name} className={"store-item__item-wrapper"}>
           <article className={'store-item'}
                    onMouseEnter={() => item.images.side && setImgSrc(item.images.side)}
                    onMouseLeave={() => setImgSrc(item.images.front)}

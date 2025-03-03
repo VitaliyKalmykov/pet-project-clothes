@@ -49,8 +49,8 @@ const StoreClothes = ({ itemsData, title }) => {
     };
 
     //мап в артікл товарів
-    const visibleItemsList = itemsData.map((item, index) => (
-        <StoreClothesItem item={item} key={index} />
+    const visibleItemsList = itemsData.map((item) => (
+        <StoreClothesItem item={item} key={item.name} />
     ));
 
     //блок кнопок каруселі

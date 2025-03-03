@@ -33,7 +33,6 @@ import winterShortHatBlack from '../../../../../../assets/Clothes/Hats/Winter sh
 import winterShortHatBlue from '../../../../../../assets/Clothes/Hats/Winter short hat/winter_short_hat_blue.webp'
 import winterShortHatRed from '../../../../../../assets/Clothes/Hats/Winter short hat/winter_short_hat_red.webp'
 import winterShortHatBrightRed from '../../../../../../assets/Clothes/Hats/Winter short hat/winter_short_hat_bright_red.webp'
-
 const hatsData = [
     // Men - SpringFall
     {
@@ -44,8 +43,8 @@ const hatsData = [
             front: britishHatFront,
             side: britishHatSide,
         },
-        season: 'springFall',
-        gender: 'men',
+        season: 'fall/spring',
+        gender: ['male'],
     },
     // Men - Summer
     {
@@ -57,19 +56,7 @@ const hatsData = [
             side: chickagoCapSide,
         },
         season: 'summer',
-        gender: 'men',
-    },
-    // Men - Winter
-    {
-        name: 'Winter Ad Hat',
-        price: 40.00,
-        colors: [winterAdHatFront],
-        images: {
-            front: winterAdHatFront,
-            side: winterAdHatSide,
-        },
-        season: 'winter',
-        gender: 'men',
+        gender: ['male'],
     },
     // Women - SpringFall
     {
@@ -80,8 +67,8 @@ const hatsData = [
             front: knittedHatFront,
             side: knittedHatBack,
         },
-        season: 'springFall',
-        gender: 'women',
+        season: 'fall/spring',
+        gender: ['female'],
     },
     {
         name: 'Puma Hat',
@@ -91,8 +78,8 @@ const hatsData = [
             front: pumaHatFront,
             side: pumaHatSide,
         },
-        season: 'springFall',
-        gender: 'women',
+        season: 'fall/spring',
+        gender: ['female'],
     },
     {
         name: 'Tutta Hat',
@@ -102,8 +89,8 @@ const hatsData = [
             front: tuttaHatFront,
             side: tuttaHatBack,
         },
-        season: 'springFall',
-        gender: 'women',
+        season: 'fall/spring',
+        gender: ['female'],
     },
     // Women - Summer
     {
@@ -114,7 +101,7 @@ const hatsData = [
             front: primarkCap,
         },
         season: 'summer',
-        gender: 'women',
+        gender: ['female'],
     },
     // Unisex - Summer
     {
@@ -127,7 +114,7 @@ const hatsData = [
             front: blackLenseCap,
         },
         season: 'summer',
-        gender: 'unisex',
+        gender: ['male', 'female', 'unisex'],
     },
     // Unisex - Winter
     {
@@ -139,7 +126,7 @@ const hatsData = [
             side: winterAdHatSide,
         },
         season: 'winter',
-        gender: 'unisex',
+        gender: ['male', 'female', 'unisex'],
     },
     {
         name: 'Winter Classic Hat',
@@ -150,7 +137,7 @@ const hatsData = [
             side: winterClassicHatSide,
         },
         season: 'winter',
-        gender: 'unisex',
+        gender: ['male', 'female', 'unisex'],
     },
     {
         name: 'Winter Fleece Hat',
@@ -161,7 +148,7 @@ const hatsData = [
             side: winterFleeceHatInside,
         },
         season: 'winter',
-        gender: 'unisex',
+        gender: ['male', 'female', 'unisex'],
     },
     {
         name: 'Winter Short Hat',
@@ -173,7 +160,7 @@ const hatsData = [
             front: winterShortHatBlack,
         },
         season: 'winter',
-        gender: 'unisex',
+        gender: ['male', 'female', 'unisex'],
     },
 ];
 

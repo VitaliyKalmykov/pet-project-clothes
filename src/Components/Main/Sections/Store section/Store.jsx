@@ -32,7 +32,7 @@ const Store = () => {
     const filteredItems = allItems.map(({ data, title }) => ({
         title,
         data: data.filter((item) => {
-            const matchesGender = filters.gender ? item.gender === filters.gender : true;
+            const matchesGender = filters.gender ? item.gender.includes(filters.gender) : true;
             const matchesPrice = item.price >= filters.priceRange[0] && item.price <= filters.priceRange[1];
             const matchesSeason = filters.season ? item.season === filters.season : true;
             const matchesSearch = filters.search ? item.name.toLowerCase().includes(filters.search.toLowerCase()) : true;

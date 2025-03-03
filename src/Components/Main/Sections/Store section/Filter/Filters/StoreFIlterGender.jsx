@@ -14,8 +14,8 @@ const StoreFilterGender = ({filters, setFilters}) => {
                 name='gender'
                 options={
                     [
-                        {value: 'men', label: 'Male'},
-                        {value: 'women', label: 'Female'},
+                        {value: 'male', label: 'Male'},
+                        {value: 'female', label: 'Female'},
                         {value: 'unisex', label: 'Unisex'}
                     ]
                 }
