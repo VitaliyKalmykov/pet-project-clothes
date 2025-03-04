@@ -1,16 +1,21 @@
 import React, {useState} from 'react';
 import Button from "../../../../UI/Button";
 
-const StoreClothesItem = ({item}) => {
+const StoreClothesItem = ({item, setIsModalItem, setIsItemModalOpen}) => {
 
     const [imgSrc, setImgSrc] = useState(item.images.front);
 
 
     return (
-      <div key={item.name} className={"store-item__item-wrapper"}>
-          <article className={'store-item'}
-                   onMouseEnter={() => item.images.side && setImgSrc(item.images.side)}
-                   onMouseLeave={() => setImgSrc(item.images.front)}
+      <div onClick={() => setIsModalItem(item)}
+           key={item.name}
+           className={"store-item__item-wrapper"}
+      >
+          <article
+              onClick={() => setIsItemModalOpen(true)}
+              className={'store-item'}
+              onMouseEnter={() => item.images.side && setImgSrc(item.images.side)}
+              onMouseLeave={() => setImgSrc(item.images.front)}
           >
               <h3 className={'store-item__item-text'}>{item.name}</h3>
               <p className={'store-item__price'}>${item.price}</p>

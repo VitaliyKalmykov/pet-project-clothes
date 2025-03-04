@@ -7,8 +7,15 @@ import pantsData from "./Clothes/Pants/pantsData";
 import sweatersData from "./Clothes/Sweaters/sweatersData";
 import shoesData from "./Clothes/Shoes/shoesData";
 import jacketsData from "./Clothes/Jackets/jacketData";
+import StoreModal from "./Modals/StoreModal";
 
 const Store = () => {
+
+    //для модалки
+    const [isItemModalOpen, setIsItemModalOpen] = useState(false);
+
+    //ітем для модалки
+    const [isModalItem, setIsModalItem] = useState(null);
 
     //фільтри
     const [filters, setFilters] = useState({
@@ -42,16 +49,28 @@ const Store = () => {
     }));
 
     return (
+        <>
         <div className="container">
             <StoreFilter filters={filters} setFilters={setFilters} />
             {filteredItems.map(({ data, title }) =>
                 data.length > 0 ? (
                     <div className="store__container" key={title}>
-                        <StoreClothes itemsData={data} title={title} />
+                        <StoreClothes
+                            setIsItemModalOpen={setIsItemModalOpen}
+                            setIsModalItem={setIsModalItem}
+                            itemsData={data}
+                            title={title}
+                        />
                     </div>
                 ) : null
             )}
         </div>
+            <StoreModal
+                isModalItem={isModalItem}
+                isItemModalOpen={isItemModalOpen}
+                setIsItemModalOpen={setIsItemModalOpen}
+            />
+        </>
     );
 };
 

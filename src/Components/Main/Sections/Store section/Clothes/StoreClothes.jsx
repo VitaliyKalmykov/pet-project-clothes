@@ -3,12 +3,10 @@ import StoreClothesItem from './StoreClothesItem';
 import Button from "../../../../UI/Button";
 import symbolDefs from '../../../../../assets/symbol-defs.svg';
 
-const StoreClothes = ({ itemsData, title }) => {
+const StoreClothes = ({ itemsData, title, setIsModalItem, setIsItemModalOpen }) => {
 
     //стан розширення
     const [isExpanded, setIsExpanded] = useState(false);
-
-    console.log(itemsData);
 
     //карусель
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -50,7 +48,12 @@ const StoreClothes = ({ itemsData, title }) => {
 
     //мап в артікл товарів
     const visibleItemsList = itemsData.map((item) => (
-        <StoreClothesItem item={item} key={item.name} />
+        <StoreClothesItem
+            item={item}
+            key={item.name}
+            setIsModalItem={setIsModalItem}
+            setIsItemModalOpen={setIsItemModalOpen}
+        />
     ));
 
     //блок кнопок каруселі
