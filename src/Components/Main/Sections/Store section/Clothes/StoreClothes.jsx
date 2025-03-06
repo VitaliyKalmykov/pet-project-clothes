@@ -65,18 +65,17 @@ const StoreClothes = ({ itemsData, title, setIsModalItem, setIsItemModalOpen }) 
 
             <h2 className={'store-items__title'}>{title}</h2>
 
+            {visibleItemsList.length > 3 && (
+                <Button
+                    onClick={() => setIsExpanded(!isExpanded)}
+                    type={'button'}
+                    className={'store-items__button-expand'}>
 
-               <Button
-                   onClick={() => setIsExpanded(!isExpanded)}
-                   type={'button'}
-                   className={'store-items__button-expand'}>
-
-                   <svg className={`store-items__button-expand--arrow ${isExpanded ? 'store-items__button-expand--arrow-active' : ""}`}>
-                       <use xlinkHref={`${symbolDefs}#icon-arrow`} />
-                   </svg>
-
-               </Button>
-
+                    <svg className={`store-items__button-expand--arrow ${isExpanded ? 'store-items__button-expand--arrow-active' : ""}`}>
+                        <use xlinkHref={`${symbolDefs}#icon-arrow`} />
+                    </svg>
+                </Button>
+            )}
 
             {!isExpanded && (
                 <div>

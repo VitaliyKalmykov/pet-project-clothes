@@ -48,21 +48,29 @@ const Store = () => {
         }),
     }));
 
+    //для умовної відрисовки, перевірка на пустий масив
+    const noItemsFound = filteredItems.every(({ data }) => data.length === 0);
+
+
     return (
         <>
         <div className="container">
             <StoreFilter filters={filters} setFilters={setFilters} />
-            {filteredItems.map(({ data, title }) =>
-                data.length > 0 ? (
-                    <div className="store__container" key={title}>
-                        <StoreClothes
-                            setIsItemModalOpen={setIsItemModalOpen}
-                            setIsModalItem={setIsModalItem}
-                            itemsData={data}
-                            title={title}
-                        />
-                    </div>
-                ) : null
+            {noItemsFound ? (
+                <p>No products were found for these filters</p>
+            ) : (
+                filteredItems.map(({ data, title }) =>
+                    data.length > 0 ? (
+                        <div className="store__container" key={title}>
+                            <StoreClothes
+                                setIsItemModalOpen={setIsItemModalOpen}
+                                setIsModalItem={setIsModalItem}
+                                itemsData={data}
+                                title={title}
+                            />
+                        </div>
+                    ) : null
+                )
             )}
         </div>
             <StoreModal
