@@ -15,23 +15,25 @@ const StoreFilterPrice = ({filters, setFilters}) => {
 
     return (
         <div>
-            <h2>
+            <h2 className={'store-filter__price-title'}>
                 Price
             </h2>
-            <NumberInput
-                label='From'
-                id={'from'}
-                name={'from'}
-                value={filters.priceRange[0]}
-                onChange={handleMinPriceChange}
-            />
-            <NumberInput
-                label='To'
-                id={'to'}
-                name={'to'}
-                value={filters.priceRange[1]}
-                onChange={handleMaxPriceChange}
-            />
+           <div className={'store-filter__price-container'}>
+               <NumberInput
+                   label='From'
+                   id={'from'}
+                   name={'from'}
+                   value={filters.priceRange[0]}
+                   onChange={handleMinPriceChange}
+               />
+               <NumberInput
+                   label='To'
+                   id={'to'}
+                   name={'to'}
+                   value={filters.priceRange[1]}
+                   onChange={handleMaxPriceChange}
+               />
+           </div>
         </div>
     );
 };

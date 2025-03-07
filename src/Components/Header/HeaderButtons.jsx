@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import symbols from '../../assets/symbol-defs.svg';
 
-const HeaderButtons = ({setIsModal}) => {
+const HeaderButtons = ({setIsModal, setModalType}) => {
+
     const [isVolumeHigh, setIsVolumeHigh] = useState(true); // Стан для перемикання між іконками
 
     const [isLampActive, setIsLampActive] = useState(false); // Стан для перемикання кольору лампи
@@ -23,6 +24,11 @@ const HeaderButtons = ({setIsModal}) => {
     const toggleLampColor = () => {
         setIsLampActive(prev => !prev); // Перемикає стан
     };
+    //Відкриття модального вікна
+    const handleOpenModal = (modalType) => {
+        setIsModal(true);
+        setModalType(modalType);
+    }
 
     return (
         <div className={'header__buttons-container'}>
@@ -30,14 +36,17 @@ const HeaderButtons = ({setIsModal}) => {
                 <button
                     className={`header__button ${icon.iconId === 'icon-bulb' && isLampActive ? 'header__icon-bulb-active' : ''}`}
                     key={index}
-                    onClick=
-                        {icon.secondIconId ? toggleVolumeIcon //перемикаємо іконку звуку
-                            :
-                            icon.iconId === 'icon-bulb' ? toggleLampColor //додаємо класс до лампи
-                                :
-                                icon.iconId === 'icon-call' ? () => setIsModal(true)
-                                    :
-                                null}
+                    onClick={() => {
+                        if (icon.iconId === "icon-volume-high" || icon.iconId === "icon-volume-mute") {
+                            toggleVolumeIcon(); // Перемикаємо іконку звуку
+                        } else if (icon.iconId === "icon-bulb") {
+                            toggleLampColor(); // Перемикаємо колір лампи
+                        } else if (icon.iconId === "icon-call") {
+                            handleOpenModal("call"); // Відкриваємо модалку зворотного зв'язку
+                        } else if (icon.iconId === "icon-basket") {
+                            handleOpenModal("cart"); // Відкриваємо модалку корзини
+                        }
+                    }}
                 >
                     <svg className={"header__svg"}>
                         <use href={`${symbols}#${icon.secondIconId && !isVolumeHigh ? icon.secondIconId : icon.iconId}`} />

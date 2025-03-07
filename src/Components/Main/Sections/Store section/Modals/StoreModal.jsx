@@ -43,7 +43,7 @@ const StoreModal = ({ isItemModalOpen, isModalItem, setIsItemModalOpen }) => {
                     <p className="store-modal__price">${isModalItem.price}</p>
                     <p className="store-modal__description">{isModalItem.description}</p>
                     <p>Composition: {isModalItem.composition}</p>
-                    <button className="store-modal__button">Add to cart</button>
+                    <Button className="button store-modal__button">Add to cart</Button>
                 </div>
             </div>
         </div>

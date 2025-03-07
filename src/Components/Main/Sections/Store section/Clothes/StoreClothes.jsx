@@ -8,6 +8,20 @@ const StoreClothes = ({ itemsData, title, setIsModalItem, setIsItemModalOpen }) 
     //стан розширення
     const [isExpanded, setIsExpanded] = useState(false);
 
+    //адаптив
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+    //адаптив
+    const updateScreenWidth = () => {
+        setScreenWidth(window.innerWidth);
+    };
+
+    useEffect(() => {
+        window.addEventListener('resize', updateScreenWidth);
+        return () => window.removeEventListener('resize', updateScreenWidth);
+    }, []);
+
+
     //карусель
     const [currentIndex, setCurrentIndex] = useState(0);
     const totalItems = itemsData.length;
@@ -60,18 +74,34 @@ const StoreClothes = ({ itemsData, title, setIsModalItem, setIsItemModalOpen }) 
     const isAtStart = currentIndex === 0;
     const isAtEnd = currentIndex >= totalItems - visibleItems;
 
+    //адаптив
+    const isMobile = screenWidth <= 767;
+    const isTablet = screenWidth > 767 && screenWidth <= 1024;
+
+    //перемикач слайдів
+    const totalSlides = Math.ceil(totalItems / visibleItems);
+    //функція перемикача
+    const goToSlide = (index) => {
+        setCurrentIndex(index * visibleItems);
+    };
+
+
     return (
         <div className={`${isExpanded ? 'store-items__container--expanded' : 'store-items__container'}`}>
 
             <h2 className={'store-items__title'}>{title}</h2>
 
-            {visibleItemsList.length > 3 && (
+            {(visibleItemsList.length > (isMobile ? 1 : isTablet ? 2 : 3)) && (
                 <Button
                     onClick={() => setIsExpanded(!isExpanded)}
-                    type={'button'}
-                    className={'store-items__button-expand'}>
-
-                    <svg className={`store-items__button-expand--arrow ${isExpanded ? 'store-items__button-expand--arrow-active' : ""}`}>
+                    type="button"
+                    className="store-items__button-expand"
+                >
+                    <svg
+                        className={`store-items__button-expand--arrow ${
+                            isExpanded ? 'store-items__button-expand--arrow-active' : ''
+                        }`}
+                    >
                         <use xlinkHref={`${symbolDefs}#icon-arrow`} />
                     </svg>
                 </Button>
@@ -111,8 +141,19 @@ const StoreClothes = ({ itemsData, title, setIsModalItem, setIsItemModalOpen }) 
                 >
                     {visibleItemsList}
                 </div>
-
             </div>
+
+            {!isExpanded && (
+                <div className="store-items__pagination">
+                    {Array.from({ length: totalSlides }).map((_, index) => (
+                        <Button
+                            key={index}
+                            className={`store-items__pagination-dot ${currentIndex / visibleItems === index ? 'store-items__pagination-dot--active' : ''}`}
+                            onClick={() => goToSlide(index)}
+                        />
+                    ))}
+                </div>
+            )}
 
         </div>
     );

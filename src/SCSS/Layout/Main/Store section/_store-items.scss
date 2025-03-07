@@ -105,5 +105,29 @@
     }
     
   }
+  /* Контейнер для пагінації */
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.3rem;
+    gap: 1rem;
+  }
+
+  /* Окремий елемент пагінації  */
+  &__pagination-dot {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background-color: #ccc;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+  }
+
+  /* Активний елемент */
+   &__pagination-dot--active {
+    background-color: #333;
+    transform: scale(1.2);
+  }
 
 }

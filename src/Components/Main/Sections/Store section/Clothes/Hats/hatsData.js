@@ -14,9 +14,6 @@ import chickagoCapFront from '../../../../../../assets/Clothes/Hats/Summer chick
 import chickagoCapSide from '../../../../../../assets/Clothes/Hats/Summer chickago cap/summer_chickago_cap_side.webp'
 
 import blackLenseCap from '../../../../../../assets/Clothes/Hats/Summer lense cap/black_lense_cap.webp'
-import brownLenseCap from '../../../../../../assets/Clothes/Hats/Summer lense cap/brown_lense_cap.webp'
-import whiteLenseCap from '../../../../../../assets/Clothes/Hats/Summer lense cap/White_lense_cap.webp'
-import yellowLenseCap from '../../../../../../assets/Clothes/Hats/Summer lense cap/Yellow_lense_cap.webp'
 
 import primarkCap from '../../../../../../assets/Clothes/Hats/Summer primak cap/summer_primak_cap.webp';
 
@@ -30,9 +27,6 @@ import winterFleeceHatFront from '../../../../../../assets/Clothes/Hats/Winter f
 import winterFleeceHatInside from '../../../../../../assets/Clothes/Hats/Winter fleece hat/winter_fleece_hat_inside.webp'
 
 import winterShortHatBlack from '../../../../../../assets/Clothes/Hats/Winter short hat/winter_short_hat_black.webp'
-import winterShortHatBlue from '../../../../../../assets/Clothes/Hats/Winter short hat/winter_short_hat_blue.webp'
-import winterShortHatRed from '../../../../../../assets/Clothes/Hats/Winter short hat/winter_short_hat_red.webp'
-import winterShortHatBrightRed from '../../../../../../assets/Clothes/Hats/Winter short hat/winter_short_hat_bright_red.webp'
 
 const hatsData = [
     {
@@ -124,7 +118,6 @@ const hatsData = [
         price: 22.99,
         season: 'summer',
         gender: ['male', 'female', 'unisex'],
-        colors: [blackLenseCap, whiteLenseCap, yellowLenseCap, brownLenseCap],
         images: {
             front: blackLenseCap,
         },
@@ -179,7 +172,6 @@ const hatsData = [
         price: 20.00,
         season: 'winter',
         gender: ['male', 'female', 'unisex'],
-        colors: [winterShortHatBlack, winterShortHatBlue, winterShortHatRed, winterShortHatBrightRed],
         images: {
             front: winterShortHatBlack,
         },

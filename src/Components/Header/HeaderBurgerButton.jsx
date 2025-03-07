@@ -6,6 +6,7 @@ const HeaderBurgerButton = ({isSidebarOpen, setIsSidebarOpen}) => {
         setIsSidebarOpen(!isSidebarOpen);
     }
 
+
     return (
         <button
             onClick={toggleSidebar}

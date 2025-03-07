@@ -1,13 +1,14 @@
 import React from 'react';
 import ModalCall from "./ModalCall/ModalCall";
+import ModalCart from "./ModalCart/ModalCart";
 
-const Modal = ({setIsModal}) => {
+const Modal = ({setIsModal, modalType}) => {
     return (
         <div className="modal" onClick={() =>
             setIsModal(false)
         }>
             <div className="modal__container" onClick={(e) => e.stopPropagation()}>
-                <ModalCall/>
+                {modalType === 'call' ? <ModalCall /> : modalType === 'cart' ? <ModalCart /> : null}
                 <button onClick={() => setIsModal(false)} type={"button"} className={"modal__btn-close"}>
                     ✖
                 </button>

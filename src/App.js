@@ -8,14 +8,15 @@ import { BrowserRouter as Router } from "react-router-dom";
 function App() {
 
     const [isModal, setIsModal] = useState(false);
+    const [modalType, setModalType] = useState(null);
 
     return (
         <>
            <Router>
-               <Header setIsModal={setIsModal} />
+               <Header setIsModal={setIsModal} setModalType={setModalType} />
                <Main/>
            </Router>
-           {isModal && <Modal setIsModal={setIsModal}/>}
+           {isModal && <Modal setIsModal={setIsModal} modalType={modalType} />}
         </>
   );
 }
