@@ -7,7 +7,7 @@ import OfflineStores from "./Sections/Offline section/OfflineStores";
 import CustomOrder from "./Sections/Custom section/CustomOrder";
 import Contact from "./Sections/Contact section/Contact";
 
-const Main = () => {
+const Main = ({setIsModalArr}) => {
 
     const location = useLocation();
 
@@ -22,7 +22,7 @@ const Main = () => {
             >
                 <Routes location={location}>
                     <Route path="/" element={<Navigate to="/Store" />} /> {/* Перенаправляє на /Store */}
-                    <Route path="/Store" element={<Store />} />
+                    <Route path="/Store" element={<Store setIsModalArr={setIsModalArr} />} />
                     <Route path="/Details" element={<Details />} />
                     <Route path="/OfflineStores" element={<OfflineStores />} />
                     <Route path="/CustomOrder" element={<CustomOrder />} />

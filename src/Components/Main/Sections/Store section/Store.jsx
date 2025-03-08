@@ -9,7 +9,7 @@ import shoesData from "./Clothes/Shoes/shoesData";
 import jacketsData from "./Clothes/Jackets/jacketData";
 import StoreModal from "./Modals/StoreModal";
 
-const Store = () => {
+const Store = ({setIsModalArr}) => {
 
     //для модалки
     const [isItemModalOpen, setIsItemModalOpen] = useState(false);
@@ -77,6 +77,7 @@ const Store = () => {
                 isModalItem={isModalItem}
                 isItemModalOpen={isItemModalOpen}
                 setIsItemModalOpen={setIsItemModalOpen}
+                setIsModalArr={setIsModalArr}
             />
         </>
     );

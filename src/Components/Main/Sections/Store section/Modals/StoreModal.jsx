@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Button from "../../../../UI/Button";
 
-const StoreModal = ({ isItemModalOpen, isModalItem, setIsItemModalOpen }) => {
+const StoreModal = ({ isItemModalOpen, isModalItem, setIsItemModalOpen, setIsModalArr }) => {
     const [selectedImg, setSelectedImg] = useState(isModalItem?.images.front);
 
     // Оновлюємо selectedImg при зміні товару
@@ -12,6 +12,21 @@ const StoreModal = ({ isItemModalOpen, isModalItem, setIsItemModalOpen }) => {
     }, [isModalItem]);
 
     if (!isItemModalOpen || !isModalItem) return null;
+
+    function addItemToCart() {
+        setIsModalArr((prev) => {
+            const existingItem = prev.find((item) => item.id === isModalItem.id);
+
+            if (existingItem) {
+                return prev.map((item) =>
+                    item.id === isModalItem.id ? { ...item, quantity: item.quantity + 1 } : item
+                );
+            } else {
+                return [...prev, { ...isModalItem, quantity: 1 }];
+            }
+        });
+    }
+
 
     return (
         <div className="store-modal">
@@ -43,7 +58,7 @@ const StoreModal = ({ isItemModalOpen, isModalItem, setIsItemModalOpen }) => {
                     <p className="store-modal__price">${isModalItem.price}</p>
                     <p className="store-modal__description">{isModalItem.description}</p>
                     <p>Composition: {isModalItem.composition}</p>
-                    <Button className="button store-modal__button">Add to cart</Button>
+                    <Button onClick={addItemToCart} className="button store-modal__button">Add to cart</Button>
                 </div>
             </div>
         </div>

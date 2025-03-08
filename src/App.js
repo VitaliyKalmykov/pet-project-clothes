@@ -9,14 +9,20 @@ function App() {
 
     const [isModal, setIsModal] = useState(false);
     const [modalType, setModalType] = useState(null);
+    const [isModalArr, setIsModalArr] = useState([]);
 
     return (
         <>
            <Router>
                <Header setIsModal={setIsModal} setModalType={setModalType} />
-               <Main/>
+               <Main setIsModalArr={setIsModalArr} />
            </Router>
-           {isModal && <Modal setIsModal={setIsModal} modalType={modalType} />}
+           {isModal && <Modal
+               setIsModal={setIsModal}
+               modalType={modalType}
+               isModalArr={isModalArr}
+               setIsModalArr={setIsModalArr}
+           />}
         </>
   );
 }
