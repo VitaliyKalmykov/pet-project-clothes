@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import TextInput from "../../UI/TextInput";
 import Button from "../../UI/Button";
 import CheckboxInput from "../../UI/CheckboxInput";
+import TextareaInput from "../../UI/TextareaInput";
 
 const ModalCallForm = () => {
 
@@ -10,7 +11,7 @@ const ModalCallForm = () => {
         userName: '',
         userEmail: '',
         userPhone: '',
-        userMessage: '',
+        userMessageCall: '',
         dataProcessing: false,
     })
 
@@ -126,20 +127,8 @@ const ModalCallForm = () => {
            </div>
 
             {/*Текст арєа*/}
-            <div className={"modal__call-form__textarea-container"}>
-                <p>Describe your request here:</p>
-                <textarea
-                    name="userMessage"
-                    value={formData.userMessage}
-                    onChange={handleChange}
-                    maxLength={"240"}
-                    className="modal__call-form__textarea"></textarea>
-                <span
-                    style={{
-                        color: formData.userMessage.length === 240 ? 'red' : 'inherit',
-                    }}
-                >{formData.userMessage.length}/240</span>
-            </div>
+                <TextareaInput name="userMessageCall" value={formData.userMessageCall} onChange={handleChange} maxLength={240} />
+
 
 
            {/*Чєкбокс*/}

@@ -12,6 +12,12 @@
   overflow-y: auto;
 }
 
+  //Оболочка айтемів та форми
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
 /* Кнопка закриття */
 &__btn-close {
   position: absolute;
@@ -31,11 +37,31 @@
   margin-bottom: 1.5rem;
 }
 
+  //контейнер форми
+  &__form-container{
+    flex-basis: 40%;
+    height: 60vh;
+  }
+
+  //форма
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  //Контейнер списку
+  &__list-container {
+    flex-basis: 100%;
+  }
+
 /* Список товарів в кошику */
 &__list {
   flex-grow: 1;
   overflow-y: auto;
   padding-right: 1rem;
+  height: 60vh;
 }
 
 /* Окремий товар */
@@ -78,7 +104,7 @@
 /* Текст, якщо кошик порожній */
 &__empty {
   text-align: center;
-  font-size: 1rem;
+  font-size: 2rem;
   color: #777;
 }
 

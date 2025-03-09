@@ -15,11 +15,11 @@ const StoreModal = ({ isItemModalOpen, isModalItem, setIsItemModalOpen, setIsMod
 
     function addItemToCart() {
         setIsModalArr((prev) => {
-            const existingItem = prev.find((item) => item.id === isModalItem.id);
+            const existingItem = prev.find((item) => item.name === isModalItem.name);
 
             if (existingItem) {
                 return prev.map((item) =>
-                    item.id === isModalItem.id ? { ...item, quantity: item.quantity + 1 } : item
+                    item.name === isModalItem.name ? { ...item, quantity: item.quantity + 1 } : item
                 );
             } else {
                 return [...prev, { ...isModalItem, quantity: 1 }];

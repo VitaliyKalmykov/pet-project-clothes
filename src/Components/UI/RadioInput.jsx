@@ -2,7 +2,7 @@ import React from 'react';
 
 const RadioInput = ({name, options, selectedValue, onChange}) => {
     return (
-        <>
+        <div>
             {options.map((option) => (
                 <div key={option.value}>
                     <input
@@ -16,7 +16,7 @@ const RadioInput = ({name, options, selectedValue, onChange}) => {
                         <label htmlFor={option.value}>{option.label}</label>
                 </div>
             ))}
-        </>
+        </div>
     );
 };
 
