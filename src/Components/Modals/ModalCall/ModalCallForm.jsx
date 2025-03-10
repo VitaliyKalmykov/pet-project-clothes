@@ -101,7 +101,7 @@ const ModalCallForm = () => {
                    label={'Name'}
                    type={'text'}
                />
-               {errors.userName && <span className="modal__call-form__error">{errors.userName}</span>}
+               {errors.userName && <span className="modal__error">{errors.userName}</span>}
            </div>
            <div className={"modal__call-form__text-input-container"}>
                <TextInput
@@ -112,7 +112,7 @@ const ModalCallForm = () => {
                    label={'Email'}
                    type={'email'}
                />
-               {errors.userEmail && <span className="modal__call-form__error">{errors.userEmail}</span>}
+               {errors.userEmail && <span className="modal__error">{errors.userEmail}</span>}
            </div>
            <div className={"modal__call-form__text-input-container"}>
                <TextInput
@@ -123,7 +123,7 @@ const ModalCallForm = () => {
                    label={'Phone'}
                    type={'tel'}
                />
-               {errors.userPhone && <span className="modal__call-form__error">{errors.userPhone}</span>}
+               {errors.userPhone && <span className="modal__error">{errors.userPhone}</span>}
            </div>
 
             {/*Текст арєа*/}
@@ -142,7 +142,7 @@ const ModalCallForm = () => {
                    onChange={handleChange}
                />
            </div>
-           {errors.dataProcessing && <span className="modal__call-form__error">
+           {errors.dataProcessing && <span className="modal__error">
                  {errors.dataProcessing}
              </span>
            }

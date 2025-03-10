@@ -2,7 +2,7 @@ import React from 'react';
 
 const RadioInput = ({name, options, selectedValue, onChange}) => {
     return (
-        <div>
+        <div className={'input-radio'}>
             {options.map((option) => (
                 <div key={option.value}>
                     <input

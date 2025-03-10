@@ -47,8 +47,20 @@
   &__form {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.4rem;
     align-items: flex-start;
+  }
+
+  &__form-input-wrapper {
+    width: 100%;
+    position: relative;
+
+    &--radio {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
   }
 
   //Контейнер списку

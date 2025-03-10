@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from "../../UI/Button";
 
-const ModalCartItems = ({isModalArr, setIsModalArr}) => {
+const ModalCartItems = ({isModalArr, setIsModalArr, handleSubmit}) => {
 
     // Видалення товару з кошика
     const removeItemFromCart = (name) => {
@@ -25,8 +25,11 @@ const ModalCartItems = ({isModalArr, setIsModalArr}) => {
                                 </div>
                             </li>
                         ))}
+                        <li>
+                            Final price:${isModalArr.reduce((prev, curr) => Math.floor(prev + curr.price), 0)}
+                        </li>
                     </ul>
-                    <Button className="modal-cart__checkout">Make an order</Button>
+                    <Button onClick={handleSubmit} className="modal-cart__checkout">Make an order</Button>
                 </>
             ) : (
                 <p className="modal-cart__empty">Your cart is empty</p>
