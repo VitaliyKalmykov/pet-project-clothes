@@ -4,8 +4,10 @@ import CheckboxInput from "../../UI/CheckboxInput";
 import TextareaInput from "../../UI/TextareaInput";
 import RadioInput from "../../UI/RadioInput";
 
-const ModalCartForm = ({ isModalArr, formRef }) => {
+const ModalCartForm = ({ isModalArr, formRef, setDeliveryMethod, setIsFormSubmitted, isFormSubmitted }) => {
 
+
+//інпути форми
     const [formData, setFormData] = useState({
         userName: '',
         userEmail: '',
@@ -15,6 +17,7 @@ const ModalCartForm = ({ isModalArr, formRef }) => {
         deliveryMethod: ''
     });
 
+    //помилки при валідації
     const [errors, setErrors] = useState({});
 
     //валідація
@@ -40,6 +43,7 @@ const ModalCartForm = ({ isModalArr, formRef }) => {
         return Object.keys(newErrors).length === 0;
     }
 
+    //доставка
     const deliveryMethod = [
         {
             value: 'self-delivery', label: 'Self-Delivery',
@@ -56,6 +60,10 @@ const ModalCartForm = ({ isModalArr, formRef }) => {
             ...prev,
             [name]: type === 'checkbox' ? checked : value,
         }));
+
+        if (name === "deliveryMethod") {
+            setDeliveryMethod(value); // Оновлюємо метод доставки у батьківському компоненті
+        }
     };
 
     // Сабміт
@@ -63,7 +71,66 @@ const ModalCartForm = ({ isModalArr, formRef }) => {
         e.preventDefault();
         console.log('work')
         if (validate()) {
-            console.log("Form submitted", formData);
+
+            // Обчислення загальної суми товарів без доставки
+            const totalOrderPrice = isModalArr.reduce((total, item) => total + item.price * (item.quantity || 1), 0);
+
+            // Визначаємо ціну доставки
+            const deliveryPrice = formData.deliveryMethod === 'courier-delivery' ? 20 : 0;
+
+            // Загальна сума замовлення з доставкою
+            const finalOrderPrice = (totalOrderPrice + deliveryPrice).toFixed(2);
+
+            const formDataToSend = {
+
+                //ім'я юзера
+                userName: formData.userName,
+
+                //мейл юзера
+                userEmail: formData.userEmail,
+
+                //телефон юзера
+                userPhone: formData.userPhone,
+
+                //повідомлення юзера
+                userMessage: formData.userMessage,
+
+                //спосіб доставки
+                deliveryMethod: formData.deliveryMethod,
+
+                //згодка на обробку данних
+                dataProcessing: formData.dataProcessing,
+
+                //товари замовленя
+                cartItems: isModalArr.map(item => (
+                    {
+                        name: item.name,
+                        price: item.price,
+                    }
+                )),
+                 //уся сума заказу
+                finalOrderPrice: finalOrderPrice, // Сума з доставкою
+
+            };
+            // Надсилаємо форму на Formspree
+            fetch('https://formspree.io/f/xkgjnaov', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formDataToSend),
+            })
+                .then((response) => {
+                    if (response.ok) {
+                        console.log("Form successfully submitted!");
+                        setIsFormSubmitted(true); // Успішно відправлено, показуємо повідомлення
+                    } else {
+                        console.log("There was an issue with the form submission");
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error submitting form:", error);
+                });
         }
     };
 
@@ -72,6 +139,10 @@ const ModalCartForm = ({ isModalArr, formRef }) => {
             {isModalArr.length > 0 ? (
                 <div className={'modal-cart__form-container'}>
                     <form ref={formRef} onSubmit={onSubmit} className={'modal-cart__form'}>
+                        {isFormSubmitted
+                            &&
+                            <p className={'modal-cart__form-success'}>Thank you for your order! We will contact you shortly.</p>
+                        }
                         <div className={'modal-cart__form-input-wrapper'}>
                             <TextInput name="userName" value={formData.userName} onChange={handleChange} label="Name" />
                             {errors.userName && <p className="modal__error">{errors.userName}</p>}

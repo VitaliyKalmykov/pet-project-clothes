@@ -15,7 +15,10 @@ function App() {
         <>
            <Router>
                <Header setIsModal={setIsModal} setModalType={setModalType} />
-               <Main setIsModalArr={setIsModalArr} />
+               <Main
+                   isModalArr={isModalArr}
+                   setIsModalArr={setIsModalArr}
+               />
            </Router>
            {isModal && <Modal
                setIsModal={setIsModal}

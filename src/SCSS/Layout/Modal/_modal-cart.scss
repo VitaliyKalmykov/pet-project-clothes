@@ -51,6 +51,14 @@
     align-items: flex-start;
   }
 
+  &__form-success {
+    color: green;
+    position: absolute;
+    top: 3rem;
+    right: 2rem;
+    text-wrap: nowrap;
+  }
+
   &__form-input-wrapper {
     width: 100%;
     position: relative;
@@ -91,6 +99,7 @@
   object-fit: cover;
   border-radius: 1rem;
   margin-right: 1rem;
+  cursor: pointer;
 }
 
 /* Інформація про товар */

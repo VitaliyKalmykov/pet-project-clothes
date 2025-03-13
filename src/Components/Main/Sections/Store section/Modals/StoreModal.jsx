@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Button from "../../../../UI/Button";
 
-const StoreModal = ({ isItemModalOpen, isModalItem, setIsItemModalOpen, setIsModalArr }) => {
+const StoreModal = ({ isItemModalOpen, isModalItem, setIsItemModalOpen, setIsModalArr, isModalArr }) => {
     const [selectedImg, setSelectedImg] = useState(isModalItem?.images.front);
 
     // Оновлюємо selectedImg при зміні товару
@@ -26,6 +26,14 @@ const StoreModal = ({ isItemModalOpen, isModalItem, setIsItemModalOpen, setIsMod
             }
         });
     }
+
+    // Видаляємо товар з кошика
+    function removeItemFromCart() {
+        setIsModalArr((prev) => prev.filter((item) => item.name !== isModalItem.name));
+    }
+
+    // Перевірка чи товар вже в кошику
+    const isItemInCart = isModalArr.some((item) => item.name === isModalItem.name);
 
 
     return (
@@ -58,7 +66,16 @@ const StoreModal = ({ isItemModalOpen, isModalItem, setIsItemModalOpen, setIsMod
                     <p className="store-modal__price">${isModalItem.price}</p>
                     <p className="store-modal__description">{isModalItem.description}</p>
                     <p>Composition: {isModalItem.composition}</p>
-                    <Button onClick={addItemToCart} className="button store-modal__button">Add to cart</Button>
+                    {/* Кнопка Add to cart або Remove */}
+                    {isItemInCart ? (
+                        <Button onClick={removeItemFromCart} className="button store-modal__remove">
+                            Remove from cart
+                        </Button>
+                    ) : (
+                        <Button onClick={addItemToCart} className="button store-modal__add">
+                            Add to cart
+                        </Button>
+                    )}
                 </div>
             </div>
         </div>
