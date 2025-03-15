@@ -48,7 +48,7 @@ const ModalCartItems = ({isModalArr, setIsModalArr, handleSubmit, deliveryMethod
                             </li>
                         ))}
                     </ul>
-                    <p>Final price:${finalPrice}</p>
+                    <p className={'modal-cart__final-price'}>Final price:${finalPrice}</p>
                     <Button onClick={handleSubmit} className="modal-cart__checkout">Make an order</Button>
                 </>
             ) : (

@@ -2,7 +2,7 @@ import React, {useRef, useState} from "react";
 import ModalCartItems from "./ModalCartItems";
 import ModalCartForm from "./ModalCartForm";
 
-const ModalCart = ({ isModalArr, setIsModalArr }) => {
+const ModalCart = ({ isModalArr, setIsModalArr, setIsModal }) => {
 
     //успішний сабміт форми
     const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -40,6 +40,9 @@ const ModalCart = ({ isModalArr, setIsModalArr }) => {
                         isFormSubmitted={isFormSubmitted}
                     />
                 </div>
+                <button onClick={() => setIsModal(false)} type={"button"} className={"modal__btn-close"}>
+                    ✖
+                </button>
             </div>
         </div>
     );
