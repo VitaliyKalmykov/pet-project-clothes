@@ -1,0 +1,133 @@
+.store-items {
+  &__container {
+    position: relative;
+    padding: 1rem 1rem;
+    text-align: center;
+  }
+  &__container--expanded{
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  &__title {
+    margin-bottom: 1rem;
+  }
+  &__list-wrapper--expanded {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    overflow: auto;
+    @media screen and (min-width: $bp-tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (min-width: $bp-desktop) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__list {
+    overflow: hidden;
+    &-wrapper {
+      display: flex;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  //кнопка розширення
+  &__button-expand{
+
+    position: absolute;
+    left: 0.5rem;
+    top: 0.3rem;
+
+    background: transparent;
+    border: none;
+    fill: red;
+    cursor: pointer;
+
+    &--arrow {
+      border: none;
+      width: 1.5rem;
+      height: 2rem;
+      transition: all 0.3s ease-in-out;
+    }
+    &--arrow-active {
+      transform: rotate(45deg);
+    }
+
+  }
+
+  //кнопки каруселі
+  &__buttons-carousel--left {
+    cursor: pointer;
+    z-index: 50;
+    position: absolute;
+    left: -0.5rem;
+    top: 50%;
+    border: none;
+    background: transparent;
+    &-arrow {
+      width: 1.5rem;
+      height: 1.5rem;
+      transform: rotate(180deg);
+    }
+
+    @media screen and (min-width: $bp-tablet) {
+      left: -0.3rem;
+    }
+
+    @media screen and (min-width: $bp-desktop) {
+      left: 1rem;
+    }
+
+  }
+  &__buttons-carousel--right {
+    z-index: 50;
+    position: absolute;
+    right: -0.5rem;
+    top: 50%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    &-arrow {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    @media screen and (min-width: $bp-tablet) {
+      right: -0.3rem;
+    }
+
+    @media screen and (min-width: $bp-desktop) {
+      right: 1rem;
+    }
+    
+  }
+  /* Контейнер для пагінації */
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.3rem;
+    gap: 1rem;
+  }
+
+  /* Окремий елемент пагінації  */
+  &__pagination-dot {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background-color: #ccc;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+  }
+
+  /* Активний елемент */
+   &__pagination-dot--active {
+    background-color: #333;
+    transform: scale(1.2);
+  }
+
+}

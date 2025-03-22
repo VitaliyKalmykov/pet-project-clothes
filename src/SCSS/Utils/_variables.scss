@@ -1,0 +1,26 @@
+:root {
+  /* Загальні змінні, доступні для обох тем */
+  --color-accent1: #ff4c29;   /* Яскравий червоно-оранжевий */
+  --color-accent2: #0077b6;   /* Насичений блакитний */
+  --color-accent3: #4caf50;   /* Соковитий зелений */
+  --color-accent4: #8a2be2;   /* Фіолетовий електрик */
+  --color-bulb-active: #ffd700; /* Золотистий */
+  --color-hover: #ffb703;     /* Сонячний жовтий */
+  --color-overlay: rgba(26, 26, 46, 0.5); /* Напівпрозорий темний */
+
+
+}
+
+/* Світла тема */
+[data-theme='light'] {
+  --color-primary-light: black; /* Світло-сірий, м'який білий */
+}
+
+/* Темна тема */
+[data-theme='dark'] {
+  --color-primary-light: white; /* Темно-синій */
+}
+
+$bp-mobile: 480px;
+$bp-tablet: 768px;
+$bp-desktop: 1280px;

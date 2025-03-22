@@ -1,0 +1,155 @@
+.store-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  //для закриття по кліку поза контент контейнером
+  &__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  //контент контейнер
+  &__container {
+    position: relative;
+    background: #fff;
+    padding: 2rem;
+    max-width: 90%;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    animation: fadeIn 0.3s ease-in-out;
+
+    @media screen and (min-width: $bp-desktop) {
+      flex-direction: row;
+      gap: 1rem;
+      max-width: 50%;
+    }
+  }
+
+  //кнопка закриття
+  &__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
+  }
+
+  // Блок із зображеннями
+  &__image-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__img-large {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 8px;
+    object-fit: contain;
+
+    @media screen and (min-width: $bp-tablet) {
+      width: 15rem;
+      height: 15rem;
+    }
+
+    @media screen and (min-width: $bp-desktop) {
+      width: 17rem;
+      height: 17rem;
+    }
+  }
+
+  &__thumbnails {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+  }
+
+  //картинки під великою картинкою
+  &__thumbnail {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, opacity 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &--active {
+      border: 2px solid #f60;
+      opacity: 0.7;
+    }
+  }
+
+  // Блок із текстовою інформацією
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  &__price {
+    font-size: 1rem;
+    color: #f60;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+  }
+
+  &__remove {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    background-color: red;
+    color: white;
+  }
+  &__add {
+    background: #f60;
+    color: #fff;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    transition: background 0.3s;
+
+    &:hover {
+      background: #d85400;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

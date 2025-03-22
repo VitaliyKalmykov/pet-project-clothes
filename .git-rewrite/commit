@@ -1,0 +1,6 @@
+tree 1bcf3a6c3a8bf3468061821b1f072b0394fa4fdc
+parent a19bcbc7e810bbbf92b4f3201f5d5c8ac5d9a286
+author Vitalii <vitaliy.kalmykov.work@gmail.com> 1742383230 +0200
+committer Vitalii <vitaliy.kalmykov.work@gmail.com> 1742383230 +0200
+
+add header style, add fonts, add colors vars

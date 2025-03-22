@@ -1,0 +1,36 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 150;
+
+  &__container {
+
+    position: relative;
+
+    background-color: white;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    max-width: 90vw;
+
+  }
+  &__btn-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  &__error {
+    position: absolute;
+    color: red;
+  }
+}

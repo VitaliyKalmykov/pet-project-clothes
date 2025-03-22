@@ -1,0 +1,4 @@
+f09f18b3081540f232833548a71fde3ef2aa55f8 commit	refs/heads/main
+d098cb4f6cb8bc33feb41428cfae48d32817d6e0 commit	refs/heads/my-feature-branch
+b6d1380908d51f106bf9aade3054141df0b298a0 commit	refs/remotes/origin/main
+d098cb4f6cb8bc33feb41428cfae48d32817d6e0 commit	refs/remotes/origin/my-feature-branch

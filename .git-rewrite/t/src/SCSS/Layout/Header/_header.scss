@@ -1,0 +1,222 @@
+.header {
+  border-bottom: 2px solid black;
+
+  //бекграунд гіфка
+  background-image: url('../../../assets/backgrounds/header_background.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  //global container
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  //logo
+  &__logo{
+    width: 4rem;
+    height: auto;
+
+    cursor: pointer;
+
+    display: flex;
+
+    background-color: var(--color-secondary);
+
+    border-radius: 50%;
+
+  }
+
+  //buttons (svg + burger)
+  &__buttons-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+
+    @media screen and (min-width: $bp-tablet) {
+      gap: 2rem;
+    }
+
+    @media screen and (min-width: $bp-desktop) {
+      display: flex;
+      flex-grow: 1;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+  &__button {
+    background: none;
+    border: none;
+    transition: all 0.5s ease-in-out;
+
+
+    cursor: pointer;
+
+    &:hover{
+      transform: scale(1.3);
+    }
+
+    &:nth-of-type(1) {
+      fill: var(--color-accent1);
+      border: 1px solid var(--color-accent1);
+      padding: 0.3rem;
+    }
+
+    &:nth-of-type(2) {
+      fill: var(--color-accent2);
+      border: 1px solid var(--color-accent2);
+      padding: 0.3rem;
+    }
+    &:nth-of-type(3) {
+      fill: var(--color-accent3);
+      border: 1px solid var(--color-accent3);
+      padding: 0.3rem;
+    }
+    &:nth-of-type(4) {
+      fill: var(--color-accent4);
+      border: 1px solid var(--color-accent4);
+      padding: 0.3rem;
+    }
+  }
+  &__icon-bulb-active{
+    fill: var(--color-bulb-active) !important;
+    border: 1px solid var(--color-bulb-active) !important;
+  }
+
+  &__svg{
+    width: 2rem;
+    height: 2rem;
+    @media screen and (min-width: $bp-tablet) {
+      width: 4rem;
+      height: 4rem;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+&__burger-button {
+
+  width: 4rem;
+  height: 3rem;
+
+  cursor: pointer;
+
+  border: none;
+  background: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  overflow: hidden;
+  z-index: 101;
+
+  & > div {
+    width: 100%;
+    height: 1px;
+    border: 1px solid var(--color-secondary);
+    transition: all 0.3s ease-in-out;
+  }
+
+  &--active {
+
+    & > div {
+      border: 1px solid var(--color-primary);
+    }
+
+    div:nth-child(1) {
+      transform: rotate(45deg) translateY(1rem) translateX(1rem);
+    }
+
+    div:nth-child(2) {
+      transform: rotate(-45deg);
+    }
+
+    div:nth-child(3) {
+      transform: translateY(100%)
+  }
+  }
+
+  @media screen and (min-width: $bp-desktop) {
+    display: none;
+  }
+}
+
+
+  //navigation
+  &__navigation{
+    display: none;
+    @media screen and (min-width: $bp-desktop) {
+      display: flex;
+      flex-grow: 1;
+    }
+  }
+  &__navigation-list{
+    display: none;
+    @media screen and (min-width: $bp-desktop) {
+      display: flex;
+      justify-content: space-around;
+      flex-grow: 1;
+    }
+
+    a {
+      color: var(--color-secondary);
+    }
+  }
+  //sidebar
+  &__sidebar-container {
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    background: var(--color-overlay);
+
+    z-index: 100;
+
+    &--open {
+      opacity: 1;
+
+      a {
+        color: var(--color-primary);
+      }
+    }
+    @media screen and (min-width: $bp-desktop) {
+      display: none;
+    }
+  }
+  &__sidebar {
+
+    position: fixed;
+
+    width: 70%;
+    height: 100vh;
+
+    top: 0;
+    right: 0;
+
+    background-color: var(--color-secondary);
+
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    &--open {
+      transform: translateX(0%);
+    }
+
+    nav {
+      display: flex ;
+      height: 100%;
+    }
+     ul {
+       display: flex ;
+       flex-direction: column;
+       justify-content: space-around;
+       align-items: center;
+       flex-grow: 1;
+    }
+    @media screen and (min-width: $bp-desktop) {
+      display: none;
+    }
+  }
+}
