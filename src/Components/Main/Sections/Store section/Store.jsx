@@ -53,7 +53,7 @@ const Store = ({isModalArr, setIsModalArr}) => {
 
 
     return (
-        <>
+        <section>
         <div className="container">
             <StoreFilter filters={filters} setFilters={setFilters} />
             {noItemsFound ? (
@@ -80,7 +80,7 @@ const Store = ({isModalArr, setIsModalArr}) => {
                 setIsModalArr={setIsModalArr}
                 isModalArr={isModalArr}
             />
-        </>
+        </section>
     );
 };
 
