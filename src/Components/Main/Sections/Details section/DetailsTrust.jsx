@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const trustPrinciples = [
     {
@@ -44,19 +44,46 @@ const trustPrinciples = [
 ];
 
 const DetailsTrust = () => {
+
+    const [expanded, setExpanded] = useState(false);
+
+    const [expandedPoints, setExpandedPoints] = useState(null);
+
+    const toggleExpansion = (index) => {
+        setExpandedPoints(expandedPoints === index ? null : index); // Якщо вже відкрито - закрити
+    };
+
     return (
-        <div className={"details-trust"}>
-            <div className={"details-trust__container"}>
-                {trustPrinciples.map(({ title, points }) => (
+        <div className={`details-trust ${expanded ? 'details-trust--expanded' : ''}`}>
+            <div
+                className={`details-trust__toggle ${expanded ? 'details-trust__toggle--expanded' : ''}`}
+                onClick={() => setExpanded(!expanded)}
+            >
+                <div className='details-trust__toggle-text'>
+                    {[...'TRUST'].map((letter, index) => (
+                        <span key={index}>{letter}</span>
+                    ))}
+                </div>
+            <div className="details-trust__container" onClick={(e) => e.stopPropagation()}>
+                {trustPrinciples.map(({ title, points }, index) => (
                     <div key={title}>
-                        <h3>{title}</h3>
-                        <ul>
-                            {points.map((point, index) => (
-                                <li key={index}>{point}</li>
-                            ))}
-                        </ul>
+                        <h3 className={'details-trust__title'}
+                            onClick={() => toggleExpansion(index)}
+                        >
+                            {title}
+                        </h3>
+                        <div
+                            className={`details-trust__content ${expandedPoints === index ? 'details-trust__content-expanded' : ''}`}
+                        >
+                            <ul>
+                                {points.map((point, i) => (
+                                    <li key={i}>{point}</li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
                 ))}
+            </div>
             </div>
         </div>
     );
