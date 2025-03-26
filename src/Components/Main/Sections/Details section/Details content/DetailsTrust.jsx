@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import symbolDefs from '../../../../../assets/symbol-defs.svg'
+import Button from "../../../../UI/Button";
 
 const trustPrinciples = [
     {
@@ -84,6 +86,11 @@ const DetailsTrust = () => {
                     </div>
                 ))}
             </div>
+                <Button type={'button'} className={'details-trust__button'}>
+                    <svg className={`details-trust__button-arrow ${expanded ? 'details-trust__button-arrow--active' : ''}`}>
+                        <use href={`${symbolDefs}#icon-arrow`} />
+                    </svg>
+                </Button>
             </div>
         </div>
     );

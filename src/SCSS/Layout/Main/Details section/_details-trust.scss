@@ -1,6 +1,7 @@
 .details-trust {
   display: flex;
   flex-direction: column;
+  width: auto;
 
   &__toggle {
     cursor: pointer;
@@ -22,7 +23,7 @@
   }
 
   &__toggle--expanded{
-    width: 40rem;
+    width: 35rem;
     height: auto;
   }
 
@@ -61,6 +62,24 @@
 
   &__content-expanded {
     max-height: 11rem;
+  }
+
+  &__button {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    top: 0.2rem;
+    border: none;
+    background: none;
+  }
+  &__button-arrow {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  &__button-arrow--active {
+    transform: rotate(180deg);
   }
   }
 
