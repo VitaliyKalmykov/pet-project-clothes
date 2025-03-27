@@ -156,7 +156,7 @@ const ModalCartForm = ({ isModalArr, formRef, setDeliveryMethod, setIsFormSubmit
                             {errors.userPhone && <p className="modal__error">{errors.userPhone}</p>}
                         </div>
                         <div className={'modal-cart__form-input-wrapper'}>
-                            <TextareaInput name="userMessage" value={formData.userMessage} onChange={handleChange} maxLength={250} />
+                            <TextareaInput title={'Describe your request here:'} name="userMessage" value={formData.userMessage} onChange={handleChange} maxLength={250} />
                         </div>
                         <div className={'modal-cart__form-input-wrapper'}>
                             <RadioInput name="deliveryMethod" options={deliveryMethod} selectedValue={formData.deliveryMethod} onChange={handleChange} />

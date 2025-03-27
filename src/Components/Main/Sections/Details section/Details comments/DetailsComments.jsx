@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Button from "../../../../UI/Button";
+import DetailsCommentsForm from "./DetailsCommentsForm";
 
 const commentsData = [
     { id: 1, username: 'EmmaL', stars: 5, comment: 'Absolutely love the quality! The fabric feels premium, and the stitching is flawless. Ordered twice already, and each time the delivery was lightning fast. Definitely my go-to store for stylish outfits!' },
@@ -21,17 +22,27 @@ const commentsData = [
 
 const DetailsComments = () => {
 
+    const [comments, setComments] = useState(commentsData);
     const [currentPage, setCurrentPage] = useState(1);
     const commentsPerPage = 5;
 
     const indexOfLastComment = currentPage * commentsPerPage;
     const indexOfFirstComment = indexOfLastComment - commentsPerPage;
-    const currentComments = commentsData.slice(indexOfFirstComment, indexOfLastComment);
+    const currentComments = comments.slice(indexOfFirstComment, indexOfLastComment);
 
-    const totalPages = Math.ceil(commentsData.length / commentsPerPage);
+    const totalPages = Math.ceil(comments.length / commentsPerPage);
+
+    const addComment = (newComment) => {
+        setComments(prevComments => {
+            const updatedComments = [newComment, ...prevComments];
+            setCurrentPage(1);  // Reset to first page after adding a comment
+            return updatedComments;
+        });
+    };
 
     return (
         <div className="details-comments">
+            <DetailsCommentsForm addComment={addComment}  />
             {currentComments.map(({ id, username, stars, comment }) => (
                 <div key={id} className="details-comments__item">
                     <h3 className="details-comments__username">{username}</h3>

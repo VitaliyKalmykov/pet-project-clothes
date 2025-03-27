@@ -1,9 +1,9 @@
 import React from 'react';
 
-const TextareaInput = ({ name, value, onChange, maxLength }) => {
+const TextareaInput = ({ name, value, onChange, maxLength, title }) => {
     return (
         <div className="textarea__container">
-            <p>Describe your request here:</p>
+            <p>{title}</p>
             <textarea
                 name={name}
                 value={value}
