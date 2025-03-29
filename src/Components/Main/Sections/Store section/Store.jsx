@@ -53,7 +53,7 @@ const Store = ({isModalArr, setIsModalArr}) => {
 
 
     return (
-        <section>
+        <section className={'store'}>
         <div className="container">
             <StoreFilter filters={filters} setFilters={setFilters} />
             {noItemsFound ? (

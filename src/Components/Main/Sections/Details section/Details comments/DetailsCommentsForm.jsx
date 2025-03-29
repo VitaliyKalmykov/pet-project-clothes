@@ -74,7 +74,7 @@ const DetailsCommentsForm = ({ addComment }) => {
                 onChange={(e) => setComment(e.target.value)}
                 maxLength={1000}
             />
-            <button type="submit">Submit</button>
+            <button className={'details-comments-form__button'} type="submit">Submit</button>
         </form>
     );
 };
