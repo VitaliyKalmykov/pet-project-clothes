@@ -21,6 +21,11 @@ const StoreClothes = ({ itemsData, title, setIsModalItem, setIsItemModalOpen }) 
         return () => window.removeEventListener('resize', updateScreenWidth);
     }, []);
 
+    //скидуємо карусель до початку при зміні масиву одягу
+    useEffect(() => {
+        setCurrentIndex(0);
+    }, [itemsData]);
+
 
     //карусель
     const [currentIndex, setCurrentIndex] = useState(0);

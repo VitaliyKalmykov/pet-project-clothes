@@ -1,0 +1,11 @@
+.contact {
+  color: black;
+  &__title {
+    text-align: center;
+    font-size: 1.7rem;
+    margin-bottom: 3rem;
+    @media screen and (min-width: $bp-tablet) {
+      font-size: 3rem;
+    }
+  }
+}

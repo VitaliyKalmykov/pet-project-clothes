@@ -153,7 +153,7 @@
     }
 
     div:nth-child(3) {
-      transform: translateY(100%)
+      transform: translateY(200%)
   }
   }
 
@@ -253,6 +253,10 @@
        justify-content: space-around;
        align-items: center;
        flex-grow: 1;
+    }
+
+    a {
+      font-size: 2rem;
     }
     @media screen and (min-width: $bp-desktop) {
       display: none;
