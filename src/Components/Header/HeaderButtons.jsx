@@ -1,14 +1,23 @@
-import React, { useState, useContext } from 'react';
+import React, {useState, useContext, useRef, useEffect} from 'react';
 import symbols from '../../assets/symbol-defs.svg';
 import {ThemeContext} from '../../ThemeContext/ThemeContext';
+import bgmusic from '../../assets/audio/bgmusic.mp3'
 
 const HeaderButtons = ({setIsModal, setModalType}) => {
 
     const { theme, toggleTheme } = useContext(ThemeContext); // Отримуємо тему та функцію перемикання
 
-    const [isVolumeHigh, setIsVolumeHigh] = useState(true); // Стан для перемикання між іконками
+    const [isVolumeHigh, setIsVolumeHigh] = useState(false); // Стан для перемикання між іконками
 
-    const [isLampActive, setIsLampActive] = useState(false); // Стан для перемикання кольору лампи
+    const [isLampActive, setIsLampActive] = useState(true); // Стан для перемикання кольору лампи
+
+    const audioRef = useRef(null);
+
+    useEffect(() => {
+        audioRef.current = new Audio(bgmusic);
+        audioRef.current.loop = true;
+        audioRef.current.volume = 0.09;
+    }, []);
 
 
     const icons = [
@@ -20,6 +29,11 @@ const HeaderButtons = ({setIsModal, setModalType}) => {
 
     // Функція для перемикання іконки
     const toggleVolumeIcon = () => {
+        if (audioRef.current.paused) {
+            audioRef.current.play();
+        } else {
+            audioRef.current.pause();
+        }
         setIsVolumeHigh(prev => !prev);
     };
 

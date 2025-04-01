@@ -3,8 +3,12 @@ import TextInput from "../../UI/TextInput";
 import Button from "../../UI/Button";
 import CheckboxInput from "../../UI/CheckboxInput";
 import TextareaInput from "../../UI/TextareaInput";
+import ModalSuccess from "../ModalSuccess";
 
 const ModalCallForm = () => {
+
+
+    const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
 
     //Стан для форми
     const [formData, setFormData] = useState({
@@ -70,6 +74,7 @@ const ModalCallForm = () => {
 
         if (response.ok) {
             setFormSubmitted(true); // Успішна відправка
+            setIsSuccessModalOpen(true); // Відкриваємо модалку успіху
         }
     };
 
@@ -77,12 +82,9 @@ const ModalCallForm = () => {
     //JSX
     return (
         <>
-        {formSubmitted ? (
-                <div className="form-success-message">
-                    <p>Form successfully submitted!</p>
-                    <p>We will contact you soon.</p>
-                </div>
-            ) : (
+        {formSubmitted && (
+            <ModalSuccess isOpen={isSuccessModalOpen} onClose={() => setIsSuccessModalOpen(false)} />
+            )}
         <form
             className="modal__call-form"
             action={"https://formspree.io/f/mwpvnano"}
@@ -156,7 +158,6 @@ const ModalCallForm = () => {
             {/*Сабміт кнопка*/}
             <Button type={"submit"} className={"button"}>Send!</Button>
         </form>
-            )}
         </>
     );
 };

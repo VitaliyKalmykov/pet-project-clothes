@@ -1,8 +1,14 @@
 import React, {useEffect} from 'react';
 import ModalCall from "./ModalCall/ModalCall";
 import ModalCart from "./ModalCart/ModalCart";
+import clickSound from '../../assets/audio/click.mp3'
 
 const Modal = ({setIsModal, modalType, isModalArr, setIsModalArr}) => {
+
+    const playClickSound = () => {
+        const audio = new Audio(clickSound);
+        audio.play(); // Відтворюємо звук при кліку
+    };
 
     useEffect(() => {
         if(modalType) {
@@ -17,10 +23,15 @@ const Modal = ({setIsModal, modalType, isModalArr, setIsModalArr}) => {
     }, [modalType]);
 
     return (
-        <div className="modal" onClick={() =>
-            setIsModal(false)
-        }>
-            <div className="modal__container" onClick={(e) => e.stopPropagation()}>
+        <div className="modal" onClick={(e) => {
+            playClickSound(); // Додаємо звук на клік по зовнішньому блоку
+            setIsModal(false);
+            e.stopPropagation();
+        }}>
+            <div className="modal__container" onClick={(e) => {
+                e.stopPropagation(); // Не даємо події поширюватися на зовнішній блок
+                playClickSound(); // Додаємо звук при кліку всередині модалки
+            }}>
                 {modalType === 'call'
                     ?
                     <ModalCall />

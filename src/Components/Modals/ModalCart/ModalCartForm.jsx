@@ -3,8 +3,9 @@ import TextInput from "../../UI/TextInput";
 import CheckboxInput from "../../UI/CheckboxInput";
 import TextareaInput from "../../UI/TextareaInput";
 import RadioInput from "../../UI/RadioInput";
+import ModalSuccess from "../ModalSuccess";
 
-const ModalCartForm = ({ isModalArr, formRef, setDeliveryMethod, setIsFormSubmitted, isFormSubmitted }) => {
+const ModalCartForm = ({ isModalArr, formRef, setDeliveryMethod,  isFormSubmitted }) => {
 
 
 //інпути форми
@@ -16,6 +17,9 @@ const ModalCartForm = ({ isModalArr, formRef, setDeliveryMethod, setIsFormSubmit
         dataProcessing: false,
         deliveryMethod: ''
     });
+
+    const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
+
 
     //помилки при валідації
     const [errors, setErrors] = useState({});
@@ -122,8 +126,7 @@ const ModalCartForm = ({ isModalArr, formRef, setDeliveryMethod, setIsFormSubmit
             })
                 .then((response) => {
                     if (response.ok) {
-                        console.log("Form successfully submitted!");
-                        setIsFormSubmitted(true); // Успішно відправлено, показуємо повідомлення
+                        setIsSuccessModalOpen(true);
                     } else {
                         console.log("There was an issue with the form submission");
                     }
@@ -139,10 +142,7 @@ const ModalCartForm = ({ isModalArr, formRef, setDeliveryMethod, setIsFormSubmit
             {isModalArr.length > 0 ? (
                 <div className={'modal-cart__form-container'}>
                     <form ref={formRef} onSubmit={onSubmit} className={'modal-cart__form'}>
-                        {isFormSubmitted
-                            &&
-                            <p className={'modal-cart__form-success'}>Thank you for your order! We will contact you shortly.</p>
-                        }
+                        {isSuccessModalOpen && <ModalSuccess isOpen={isSuccessModalOpen} onClose={() => setIsSuccessModalOpen(false)} />}
                         <div className={'modal-cart__form-input-wrapper'}>
                             <TextInput name="userName" value={formData.userName} onChange={handleChange} label="Name" />
                             {errors.userName && <p className="modal__error">{errors.userName}</p>}
