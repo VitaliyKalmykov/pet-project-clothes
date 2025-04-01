@@ -1,24 +1,17 @@
-import React, {useState, useContext, useRef, useEffect} from 'react';
-import symbols from '../../assets/symbol-defs.svg';
-import {ThemeContext} from '../../ThemeContext/ThemeContext';
-import bgmusic from '../../assets/audio/bgmusic.mp3'
+import React, { useState, useContext, useRef, useEffect } from 'react';
+import { ThemeContext } from '../../ThemeContext/ThemeContext';
 
-const HeaderButtons = ({setIsModal, setModalType}) => {
-
-    const { theme, toggleTheme } = useContext(ThemeContext); // Отримуємо тему та функцію перемикання
-
-    const [isVolumeHigh, setIsVolumeHigh] = useState(false); // Стан для перемикання між іконками
-
-    const [isLampActive, setIsLampActive] = useState(true); // Стан для перемикання кольору лампи
-
+const HeaderButtons = ({ setIsModal, setModalType }) => {
+    const { theme, toggleTheme } = useContext(ThemeContext);
+    const [isVolumeHigh, setIsVolumeHigh] = useState(false);
+    const [isLampActive, setIsLampActive] = useState(true);
     const audioRef = useRef(null);
 
     useEffect(() => {
-        audioRef.current = new Audio(bgmusic);
+        audioRef.current = new Audio('/assets/audio/bgmusic.mp3');
         audioRef.current.loop = true;
         audioRef.current.volume = 0.09;
     }, []);
-
 
     const icons = [
         { iconId: "icon-bulb" },
@@ -27,7 +20,6 @@ const HeaderButtons = ({setIsModal, setModalType}) => {
         { iconId: "icon-volume-high", secondIconId: "icon-volume-mute" },
     ];
 
-    // Функція для перемикання іконки
     const toggleVolumeIcon = () => {
         if (audioRef.current.paused) {
             audioRef.current.play();
@@ -37,15 +29,14 @@ const HeaderButtons = ({setIsModal, setModalType}) => {
         setIsVolumeHigh(prev => !prev);
     };
 
-    // Функція для зміни кольору лампи
     const toggleLampColor = () => {
-        setIsLampActive(prev => !prev); // Перемикає стан
+        setIsLampActive(prev => !prev);
     };
-    //Відкриття модального вікна
+
     const handleOpenModal = (modalType) => {
         setIsModal(true);
         setModalType(modalType);
-    }
+    };
 
     return (
         <div className={'header__buttons-container'}>
@@ -55,19 +46,19 @@ const HeaderButtons = ({setIsModal, setModalType}) => {
                     key={index}
                     onClick={() => {
                         if (icon.iconId === "icon-volume-high" || icon.iconId === "icon-volume-mute") {
-                            toggleVolumeIcon(); // Перемикаємо іконку звуку
+                            toggleVolumeIcon();
                         } else if (icon.iconId === "icon-bulb") {
-                            toggleLampColor(); // Перемикаємо колір лампи
-                            toggleTheme()
+                            toggleLampColor();
+                            toggleTheme();
                         } else if (icon.iconId === "icon-call") {
-                            handleOpenModal("call"); // Відкриваємо модалку зворотного зв'язку
+                            handleOpenModal("call");
                         } else if (icon.iconId === "icon-basket") {
-                            handleOpenModal("cart"); // Відкриваємо модалку корзини
+                            handleOpenModal("cart");
                         }
                     }}
                 >
                     <svg className={"header__svg"}>
-                        <use href={`${symbols}#${icon.secondIconId && !isVolumeHigh ? icon.secondIconId : icon.iconId}`} />
+                        <use href={`/assets/symbol-defs.svg#${icon.secondIconId && !isVolumeHigh ? icon.secondIconId : icon.iconId}`} />
                     </svg>
                 </button>
             ))}

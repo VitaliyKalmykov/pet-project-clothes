@@ -1,26 +1,26 @@
-import asymetryJacketFront from '../../../../../../assets/Clothes/Jackets/man asymetry jacket/man_asymetry_jacket_front.webp'
-import asymetryJacketSide from '../../../../../../assets/Clothes/Jackets/man asymetry jacket/man_asymetry_jacket_side.webp'
+const asymetryJacketFront = '/assets/Clothes/Jackets/man asymetry jacket/man_asymetry_jacket_front.webp';
+const asymetryJacketSide = '/assets/Clothes/Jackets/man asymetry jacket/man_asymetry_jacket_side.webp';
 
-import baqJacketFront from '../../../../../../assets/Clothes/Jackets/man baq jacket/man_baq_jacket_front.webp'
-import baqJacketSide from '../../../../../../assets/Clothes/Jackets/man baq jacket/man_baq_jacket_side.webp'
+const baqJacketFront = '/assets/Clothes/Jackets/man baq jacket/man_baq_jacket_front.webp';
+const baqJacketSide = '/assets/Clothes/Jackets/man baq jacket/man_baq_jacket_side.webp';
 
-import krimsonJacketFront from '../../../../../../assets/Clothes/Jackets/man krimson jacket/man_krimson_jacket_front.webp'
-import krimsonJacketSide from '../../../../../../assets/Clothes/Jackets/man krimson jacket/man_krimson_jacket_side.webp'
+const krimsonJacketFront = '/assets/Clothes/Jackets/man krimson jacket/man_krimson_jacket_front.webp';
+const krimsonJacketSide = '/assets/Clothes/Jackets/man krimson jacket/man_krimson_jacket_side.webp';
 
-import turwearJacketFront from '../../../../../../assets/Clothes/Jackets/man turwear jacket/man_turwear_jacket_front.webp'
-import turwearJacketSide from '../../../../../../assets/Clothes/Jackets/man turwear jacket/man_turwear_jacket_side.webp'
+const turwearJacketFront = '/assets/Clothes/Jackets/man turwear jacket/man_turwear_jacket_front.webp';
+const turwearJacketSide = '/assets/Clothes/Jackets/man turwear jacket/man_turwear_jacket_side.webp';
 
-import arrowJacketFront from '../../../../../../assets/Clothes/Jackets/women arrow jacket/women_arrow_jacket_front.webp'
-import arrowJacketSide from '../../../../../../assets/Clothes/Jackets/women arrow jacket/women_arrow_jacket_side.webp'
+const arrowJacketFront = '/assets/Clothes/Jackets/women arrow jacket/women_arrow_jacket_front.webp';
+const arrowJacketSide = '/assets/Clothes/Jackets/women arrow jacket/women_arrow_jacket_side.webp';
 
-import dyvaJacketFront from '../../../../../../assets/Clothes/Jackets/women dyvva jacket/women_dyvva_jacket_front.webp'
-import dyvaJacketSide from '../../../../../../assets/Clothes/Jackets/women dyvva jacket/women_dyva_jacket_side.webp'
+const dyvaJacketFront = '/assets/Clothes/Jackets/women dyvva jacket/women_dyvva_jacket_front.webp';
+const dyvaJacketSide = '/assets/Clothes/Jackets/women dyvva jacket/women_dyva_jacket_side.webp';
 
-import hyggeJacketFront from '../../../../../../assets/Clothes/Jackets/women hygge jacket/women_hygge_jacket_front.webp'
-import hyggeJacketSide from '../../../../../../assets/Clothes/Jackets/women hygge jacket/women_hygge_jacket_side.webp'
+const hyggeJacketFront = '/assets/Clothes/Jackets/women hygge jacket/women_hygge_jacket_front.webp';
+const hyggeJacketSide = '/assets/Clothes/Jackets/women hygge jacket/women_hygge_jacket_side.webp';
 
-import vymmaJacketFront from '../../../../../../assets/Clothes/Jackets/women vymma jacket/women_vymma_jacket_front.webp'
-import vymmaJacketSide from '../../../../../../assets/Clothes/Jackets/women vymma jacket/women_vymma_jacket_side.webp'
+const vymmaJacketFront = '/assets/Clothes/Jackets/women vymma jacket/women_vymma_jacket_front.webp';
+const vymmaJacketSide = '/assets/Clothes/Jackets/women vymma jacket/women_vymma_jacket_side.webp';
 
 const jacketsData = [
     // Men Jackets

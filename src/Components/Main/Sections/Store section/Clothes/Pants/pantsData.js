@@ -1,32 +1,33 @@
-import CrockPantsFront from '../../../../../../assets/Clothes/Pants/man pants crock/man_pants_crock_front.webp'
-import CrockPantsSide from '../../../../../../assets/Clothes/Pants/man pants crock/man_pants_crock_side.webp'
+const CrockPantsFront = '/assets/Clothes/Pants/man pants crock/man_pants_crock_front.webp';
+const CrockPantsSide = '/assets/Clothes/Pants/man pants crock/man_pants_crock_side.webp';
 
-import FromusPantsFront from '../../../../../../assets/Clothes/Pants/man pants fromus/man_pants_fromus_front.webp'
-import FromusPantsSide from '../../../../../../assets/Clothes/Pants/man pants fromus/man_pants_fromus_side.webp'
+const FromusPantsFront = '/assets/Clothes/Pants/man pants fromus/man_pants_fromus_front.webp';
+const FromusPantsSide = '/assets/Clothes/Pants/man pants fromus/man_pants_fromus_side.webp';
 
-import LagrandPantsFront from '../../../../../../assets/Clothes/Pants/man pants lagrand/man_pants_lagrand_front.webp'
-import LagrandPantsSide from '../../../../../../assets/Clothes/Pants/man pants lagrand/man_pants_lagrand_side.webp'
+const LagrandPantsFront = '/assets/Clothes/Pants/man pants lagrand/man_pants_lagrand_front.webp';
+const LagrandPantsSide = '/assets/Clothes/Pants/man pants lagrand/man_pants_lagrand_side.webp';
 
-import MilitaryPantsFront from '../../../../../../assets/Clothes/Pants/man pants military/man_pants_military_front.webp'
-import MilitaryPantsSide from '../../../../../../assets/Clothes/Pants/man pants military/man_pants_military_side.webp'
+const MilitaryPantsFront = '/assets/Clothes/Pants/man pants military/man_pants_military_front.webp';
+const MilitaryPantsSide = '/assets/Clothes/Pants/man pants military/man_pants_military_side.webp';
 
-import TurwayPantsFront from '../../../../../../assets/Clothes/Pants/man pants turway/man_pants_turway_front.webp'
-import TurwayPantsSide from '../../../../../../assets/Clothes/Pants/man pants turway/man_pants_turway_side.webp'
+const TurwayPantsFront = '/assets/Clothes/Pants/man pants turway/man_pants_turway_front.webp';
+const TurwayPantsSide = '/assets/Clothes/Pants/man pants turway/man_pants_turway_side.webp';
 
-import CuprumPantsFront from '../../../../../../assets/Clothes/Pants/women pants cuprum/women_pants_cuprum_front.webp'
-import CuprumPantsSide from '../../../../../../assets/Clothes/Pants/women pants cuprum/women_pants_cuprum_side.webp'
+const CuprumPantsFront = '/assets/Clothes/Pants/women pants cuprum/women_pants_cuprum_front.webp';
+const CuprumPantsSide = '/assets/Clothes/Pants/women pants cuprum/women_pants_cuprum_side.webp';
 
-import IssaPantsFront from '../../../../../../assets/Clothes/Pants/women pants issa/women_pants_issa_front.webp'
-import IssaPantsSide from '../../../../../../assets/Clothes/Pants/women pants issa/women_pants_issa_side.webp'
+const IssaPantsFront = '/assets/Clothes/Pants/women pants issa/women_pants_issa_front.webp';
+const IssaPantsSide = '/assets/Clothes/Pants/women pants issa/women_pants_issa_side.webp';
 
-import SeventeenPantsFront from '../../../../../../assets/Clothes/Pants/women pants seventeen/women_pants_seventeen_front.webp'
-import SeventeenPantsSide from '../../../../../../assets/Clothes/Pants/women pants seventeen/women_pants_seventeen_side.webp'
+const SeventeenPantsFront = '/assets/Clothes/Pants/women pants seventeen/women_pants_seventeen_front.webp';
+const SeventeenPantsSide = '/assets/Clothes/Pants/women pants seventeen/women_pants_seventeen_side.webp';
 
-import ShawkPantsFront from '../../../../../../assets/Clothes/Pants/women pants shawk/women_pants_shawk_front.webp'
-import ShawkPantsSide from '../../../../../../assets/Clothes/Pants/women pants shawk/women_pants_shawk_side.webp'
+const ShawkPantsFront = '/assets/Clothes/Pants/women pants shawk/women_pants_shawk_front.webp';
+const ShawkPantsSide = '/assets/Clothes/Pants/women pants shawk/women_pants_shawk_side.webp';
 
-import YourwayPantsFront from '../../../../../../assets/Clothes/Pants/women pants yourway/women_pants_yourway_front.webp'
-import YourwayPantsSide from '../../../../../../assets/Clothes/Pants/women pants yourway/women_pants_yourway_side.webp'
+const YourwayPantsFront = '/assets/Clothes/Pants/women pants yourway/women_pants_yourway_front.webp';
+const YourwayPantsSide = '/assets/Clothes/Pants/women pants yourway/women_pants_yourway_side.webp';
+
 
 const pantsData = [
     // Men Pants

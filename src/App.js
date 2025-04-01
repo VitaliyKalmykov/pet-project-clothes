@@ -1,24 +1,22 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./Components/Header/Header";
 import Modal from "./Components/Modals/Modal";
 import Main from "./Components/Main/Main";
 import { BrowserRouter as Router } from "react-router-dom";
-import {ThemeProvider} from "./ThemeContext/ThemeContext";
-import clickSound from '../src/assets/audio/click.mp3'
-
+import { ThemeProvider } from "./ThemeContext/ThemeContext";
 
 function App() {
-
     const [isModal, setIsModal] = useState(false);
     const [modalType, setModalType] = useState(null);
     const [isModalArr, setIsModalArr] = useState([]);
     const [isLoading, setIsLoading] = useState(true); // Стейт для завантаження
 
-
     useEffect(() => {
         const handleClick = () => {
-            const audio = new Audio(clickSound);
-            audio.play(); // Відтворюємо звук при кліку
+            const audio = new Audio("/assets/audio/click.mp3"); // Прямий шлях до файлу в public
+            audio.play().catch((error) => {
+                console.error("Error playing click sound:", error);
+            });
         };
 
         // Додаємо глобальний обробник кліку
@@ -39,7 +37,6 @@ function App() {
         loadAssets();
     }, []);
 
-
     return (
         <>
             {isLoading ? ( // Показуємо індикатор завантаження
@@ -56,17 +53,18 @@ function App() {
                             setIsModalArr={setIsModalArr}
                         />
                     </Router>
-                    {isModal && <Modal
-                        setIsModal={setIsModal}
-                        modalType={modalType}
-                        isModalArr={isModalArr}
-                        setIsModalArr={setIsModalArr}
-                    />}
+                    {isModal && (
+                        <Modal
+                            setIsModal={setIsModal}
+                            modalType={modalType}
+                            isModalArr={isModalArr}
+                            setIsModalArr={setIsModalArr}
+                        />
+                    )}
                 </ThemeProvider>
             )}
         </>
     );
 }
-
 
 export default App;

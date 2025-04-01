@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import StoreClothesItem from './StoreClothesItem';
 import Button from "../../../../UI/Button";
-import symbolDefs from '../../../../../assets/symbol-defs.svg';
 
 const StoreClothes = ({ itemsData, title, setIsModalItem, setIsItemModalOpen }) => {
 
@@ -107,7 +106,7 @@ const StoreClothes = ({ itemsData, title, setIsModalItem, setIsItemModalOpen }) 
                             isExpanded ? 'store-items__button-expand--arrow-active' : ''
                         }`}
                     >
-                        <use xlinkHref={`${symbolDefs}#icon-arrow`} />
+                        <use href="/assets/symbol-defs.svg#icon-arrow" />
                     </svg>
                 </Button>
             )}
@@ -120,7 +119,7 @@ const StoreClothes = ({ itemsData, title, setIsModalItem, setIsItemModalOpen }) 
                             onClick={goToPrevious}
                             disabled={isAtStart}>
                             <svg className={`store-items__buttons-carousel--left-arrow`}>
-                                <use xlinkHref={`${symbolDefs}#icon-arrow`} />
+                                <use href="/assets/symbol-defs.svg#icon-arrow" />
                             </svg>
                         </button>
                     )}
@@ -131,7 +130,7 @@ const StoreClothes = ({ itemsData, title, setIsModalItem, setIsItemModalOpen }) 
                             onClick={goToNext}
                             disabled={isAtEnd}>
                             <svg className={`store-items__buttons-carousel--right-arrow`}>
-                                <use xlinkHref={`${symbolDefs}#icon-arrow`} />
+                                <use href="/assets/symbol-defs.svg#icon-arrow" />
                             </svg>
                         </button>
                     )}

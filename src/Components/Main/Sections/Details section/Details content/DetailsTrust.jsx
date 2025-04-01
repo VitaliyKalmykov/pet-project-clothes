@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import symbolDefs from '../../../../../assets/symbol-defs.svg'
 import Button from "../../../../UI/Button";
 
 const trustPrinciples = [
@@ -42,13 +41,11 @@ const trustPrinciples = [
             'Fast order processing and delivery.',
             'Timely information about promotions, new products, and discounts.'
         ]
-    }
+    },
 ];
 
 const DetailsTrust = () => {
-
     const [expanded, setExpanded] = useState(false);
-
     const [expandedPoints, setExpandedPoints] = useState(null);
 
     const toggleExpansion = (index) => {
@@ -66,29 +63,30 @@ const DetailsTrust = () => {
                         <span key={index}>{letter}</span>
                     ))}
                 </div>
-            <div className="details-trust__container" onClick={(e) => e.stopPropagation()}>
-                {trustPrinciples.map(({ title, points }, index) => (
-                    <div key={title}>
-                        <h3 className={'details-trust__title'}
-                            onClick={() => toggleExpansion(index)}
-                        >
-                            {title}
-                        </h3>
-                        <div
-                            className={`details-trust__content ${expandedPoints === index ? 'details-trust__content-expanded' : ''}`}
-                        >
-                            <ul>
-                                {points.map((point, i) => (
-                                    <li key={i}>{point}</li>
-                                ))}
-                            </ul>
+                <div className="details-trust__container" onClick={(e) => e.stopPropagation()}>
+                    {trustPrinciples.map(({ title, points }, index) => (
+                        <div key={title}>
+                            <h3
+                                className={'details-trust__title'}
+                                onClick={() => toggleExpansion(index)}
+                            >
+                                {title}
+                            </h3>
+                            <div
+                                className={`details-trust__content ${expandedPoints === index ? 'details-trust__content-expanded' : ''}`}
+                            >
+                                <ul>
+                                    {points.map((point, i) => (
+                                        <li key={i}>{point}</li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
                 <Button type={'button'} className={'details-trust__button'}>
                     <svg className={`details-trust__button-arrow ${expanded ? 'details-trust__button-arrow--active' : ''}`}>
-                        <use href={`${symbolDefs}#icon-arrow`} />
+                        <use href="/assets/symbol-defs.svg#icon-arrow" />
                     </svg>
                 </Button>
             </div>

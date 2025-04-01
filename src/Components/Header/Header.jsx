@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import { ThemeContext } from "../../ThemeContext/ThemeContext";
-import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import HeaderButtons from "./HeaderButtons";
 import HeaderNavigation from "./HeaderNavigation";
@@ -16,7 +15,7 @@ const Header = ({ setIsModal, setModalType }) => {
             <div className="container">
                 <div className="header__container">
                     <Link to="/Store">
-                        <img className="header__logo" src={logo} alt="logo" />
+                        <img className="header__logo" src="/assets/logo.png" alt="logo" />
                     </Link>
                     <HeaderButtons setIsModal={setIsModal} setModalType={setModalType} />
                     <HeaderNavigation />
@@ -34,6 +33,7 @@ const Header = ({ setIsModal, setModalType }) => {
                     preload="auto"
                     className={theme === "dark" ? "header__background--active" : "header__background--hidden"}
                 >
+                    {/* Шлях до темного бекграунду в public */}
                     <source src="/assets/backgrounds/header_background_dark.mp4" type="video/mp4" />
                 </video>
                 <video
@@ -44,6 +44,7 @@ const Header = ({ setIsModal, setModalType }) => {
                     preload="auto"
                     className={theme === "light" ? "header__background--active" : "header__background--hidden"}
                 >
+                    {/* Шлях до світлого бекграунду в public */}
                     <source src="/assets/backgrounds/header_background_light.mp4" type="video/mp4" />
                 </video>
             </div>

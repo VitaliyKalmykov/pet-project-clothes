@@ -1,32 +1,34 @@
-import BeartSweaterFront from '../../../../../../assets/Clothes/Sweaters/man sweater beart/man_sweater_beart_front.webp'
-import BeartSweaterSide from '../../../../../../assets/Clothes/Sweaters/man sweater beart/man_sweater_beart_side.webp'
+const BeartSweaterFront = '/assets/Clothes/Sweaters/man sweater beart/man_sweater_beart_front.webp';
+const BeartSweaterSide = '/assets/Clothes/Sweaters/man sweater beart/man_sweater_beart_side.webp';
 
-import BeigeSweaterFront from '../../../../../../assets/Clothes/Sweaters/man sweater beige/man_sweater_beige_front.webp'
-import BeigeSweaterSide from '../../../../../../assets/Clothes/Sweaters/man sweater beige/man_sweater_beige_side.webp'
+const BeigeSweaterFront = '/assets/Clothes/Sweaters/man sweater beige/man_sweater_beige_front.webp';
+const BeigeSweaterSide = '/assets/Clothes/Sweaters/man sweater beige/man_sweater_beige_side.webp';
 
-import BirdSweaterFront from '../../../../../../assets/Clothes/Sweaters/man sweater bird/man_sweater_bird_front.webp'
-import BirdSweaterSide from '../../../../../../assets/Clothes/Sweaters/man sweater bird/man_sweater_bird_side.webp'
+const BirdSweaterFront = '/assets/Clothes/Sweaters/man sweater bird/man_sweater_bird_front.webp';
+const BirdSweaterSide = '/assets/Clothes/Sweaters/man sweater bird/man_sweater_bird_side.webp';
 
-import CatSweaterFront from '../../../../../../assets/Clothes/Sweaters/man sweater cat/man_sweater_cat_front.webp'
-import CatSweaterSide from '../../../../../../assets/Clothes/Sweaters/man sweater cat/man_sweater_cat_side.webp'
+const CatSweaterFront = '/assets/Clothes/Sweaters/man sweater cat/man_sweater_cat_front.webp';
+const CatSweaterSide = '/assets/Clothes/Sweaters/man sweater cat/man_sweater_cat_side.webp';
 
-import BeastSweaterFront from '../../../../../../assets/Clothes/Sweaters/unisex sweater beast/unisex_sweater_beast_front.webp'
-import BeastSweaterSide from '../../../../../../assets/Clothes/Sweaters/unisex sweater beast/unisex_sweater_beast_side.webp'
+const BeastSweaterFront = '/assets/Clothes/Sweaters/unisex sweater beast/unisex_sweater_beast_front.webp';
+const BeastSweaterSide = '/assets/Clothes/Sweaters/unisex sweater beast/unisex_sweater_beast_side.webp';
 
-import LotosSweaterFront from '../../../../../../assets/Clothes/Sweaters/unisex sweater lotos/unisex_sweater_lotos_front.webp'
-import LotosSweaterSide from '../../../../../../assets/Clothes/Sweaters/unisex sweater lotos/unisex_sweater_lotos_side.webp'
+const LotosSweaterFront = '/assets/Clothes/Sweaters/unisex sweater lotos/unisex_sweater_lotos_front.webp';
+const LotosSweaterSide = '/assets/Clothes/Sweaters/unisex sweater lotos/unisex_sweater_lotos_side.webp';
 
-import StarsSweaterFront from '../../../../../../assets/Clothes/Sweaters/unisex sweater stars/unisex_sweater_stars_front.webp'
-import StarsSweaterSide from '../../../../../../assets/Clothes/Sweaters/unisex sweater stars/unisex_sweater_stars_side.webp'
+const StarsSweaterFront = '/assets/Clothes/Sweaters/unisex sweater stars/unisex_sweater_stars_front.webp';
+const StarsSweaterSide = '/assets/Clothes/Sweaters/unisex sweater stars/unisex_sweater_stars_side.webp';
 
-import HyggeSweaterFront from '../../../../../../assets/Clothes/Sweaters/women sweater hygge/women_sweater_hygge_front.webp'
-import HyggeSweaterSide from '../../../../../../assets/Clothes/Sweaters/women sweater hygge/women_sweater_hygge_side.webp'
+const HyggeSweaterFront = '/assets/Clothes/Sweaters/women sweater hygge/women_sweater_hygge_front.webp';
+const HyggeSweaterSide = '/assets/Clothes/Sweaters/women sweater hygge/women_sweater_hygge_side.webp';
 
-import MotyvSweaterFront from '../../../../../../assets/Clothes/Sweaters/women sweater motyv/women_sweater_motyv_front.webp'
-import MotyvSweaterSide from '../../../../../../assets/Clothes/Sweaters/women sweater motyv/women_sweater_motyv_side.webp'
+const MotyvSweaterFront = '/assets/Clothes/Sweaters/women sweater motyv/women_sweater_motyv_front.webp';
+const MotyvSweaterSide = '/assets/Clothes/Sweaters/women sweater motyv/women_sweater_motyv_side.webp';
 
-import UvaliSweaterFront from '../../../../../../assets/Clothes/Sweaters/women sweater uvali/women_sweater_uvali_front.webp'
-import UvaliSweaterSide from '../../../../../../assets/Clothes/Sweaters/women sweater uvali/women_sweater_uvali_side.webp'
+const UvaliSweaterFront = '/assets/Clothes/Sweaters/women sweater uvali/women_sweater_uvali_front.webp';
+const UvaliSweaterSide = '/assets/Clothes/Sweaters/women sweater uvali/women_sweater_uvali_side.webp';
+
+
 
 const sweatersData = [
     // Men Sweaters

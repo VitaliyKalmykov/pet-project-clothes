@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import TextInput from "../../../../UI/TextInput";
 import TextareaInput from "../../../../UI/TextareaInput";
 import Button from "../../../../UI/Button";
-import symbolDefs from '../../../../../assets/symbol-defs.svg'
 
 const DetailsCommentsForm = ({ addComment }) => {
     const [username, setUsername] = useState('');
@@ -51,7 +50,7 @@ const DetailsCommentsForm = ({ addComment }) => {
                         onClick={() => setStars(num)}        // При кліку зберігаємо вибрану кількість зірок
                     >
                         <svg className="star-icon" width="24" height="24">
-                            <use href={`${symbolDefs}#icon-star`} />
+                            <use href="/assets/symbol-defs.svg#icon-star" />
                         </svg>
                     </Button>
                 ))}

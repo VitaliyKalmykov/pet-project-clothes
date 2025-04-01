@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import Button from "../../../../UI/Button";
 import StoreFilterItems from "./StoreFilterItems";
-import symbols from '../../../../../assets/symbol-defs.svg';
-
 const StoreFilter = ({filters, setFilters}) => {
 
     const [isFiltersOpen, setIsFiltersOpen] = useState(false);
@@ -32,14 +30,14 @@ const StoreFilter = ({filters, setFilters}) => {
             >
                 <p className={'store-filter__title'}>Filters</p>
                 <svg className={`store-filter__button-open ${isFiltersOpen ? 'store-filter__button-open--active' : ''}`}>
-                    <use href={`${symbols}#icon-arrow`} />
+                    <use href='/assets/symbol-defs.svg#icon-arrow' />
                 </svg>
             </Button>
             <div className={`store-filter__items ${isFiltersOpen ? 'store-filter__items--open' : ''}`}>
                 <StoreFilterItems filters={filters} setFilters={setFilters} />
                 <Button className={'store-filter__reset-button'} onClick={resetFilters} type="button">
                     <svg className={`store-filter__reset-icon ${animationFilterButton ? 'store-filter__reset-icon--spin' : ''}`}>
-                        <use href={`${symbols}#icon-spinner`} />
+                        <use href='/assets/symbol-defs.svg#icon-spinner' />
                     </svg>
                 </Button>
             </div>

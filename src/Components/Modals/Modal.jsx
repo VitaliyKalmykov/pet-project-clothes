@@ -1,12 +1,11 @@
 import React, {useEffect} from 'react';
 import ModalCall from "./ModalCall/ModalCall";
 import ModalCart from "./ModalCart/ModalCart";
-import clickSound from '../../assets/audio/click.mp3'
 
 const Modal = ({setIsModal, modalType, isModalArr, setIsModalArr}) => {
 
     const playClickSound = () => {
-        const audio = new Audio(clickSound);
+        const audio = new Audio("/assets/audio/click.mp3"); // Завантаження з public/audio/click.mp3
         audio.play(); // Відтворюємо звук при кліку
     };
 

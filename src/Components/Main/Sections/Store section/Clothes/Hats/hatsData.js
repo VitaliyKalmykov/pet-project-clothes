@@ -1,32 +1,33 @@
-import britishHatFront from '../../../../../../assets/Clothes/Hats/SpringFall british hat/SpringFall_brittish_hat_front.webp'
-import britishHatSide from '../../../../../../assets/Clothes/Hats/SpringFall british hat/SpringFall_brittish_hat_side.webp'
+const britishHatFront = '/assets/Clothes/Hats/SpringFall british hat/SpringFall_brittish_hat_front.webp';
+const britishHatSide = '/assets/Clothes/Hats/SpringFall british hat/SpringFall_brittish_hat_side.webp';
 
-import knittedHatFront from '../../../../../../assets/Clothes/Hats/SpringFall knitted hat/SpringFall_knitted_hat_front.webp';
-import knittedHatBack from '../../../../../../assets/Clothes/Hats/SpringFall knitted hat/SpringFall_knitted_hat_back.webp';
+const knittedHatFront = '/assets/Clothes/Hats/SpringFall knitted hat/SpringFall_knitted_hat_front.webp';
+const knittedHatBack = '/assets/Clothes/Hats/SpringFall knitted hat/SpringFall_knitted_hat_back.webp';
 
-import pumaHatFront from '../../../../../../assets/Clothes/Hats/SpringFall puma hat/SpringFall_puma_hat_front.webp';
-import pumaHatSide from '../../../../../../assets/Clothes/Hats/SpringFall puma hat/SpringFall_puma_hat_side.webp';
+const pumaHatFront = '/assets/Clothes/Hats/SpringFall puma hat/SpringFall_puma_hat_front.webp';
+const pumaHatSide = '/assets/Clothes/Hats/SpringFall puma hat/SpringFall_puma_hat_side.webp';
 
-import tuttaHatFront from '../../../../../../assets/Clothes/Hats/SpringFall tutta hat/SpringFall_tutta_hat_front.webp';
-import tuttaHatBack from '../../../../../../assets/Clothes/Hats/SpringFall tutta hat/SpringFall_tutta_hat_back.webp';
+const tuttaHatFront = '/assets/Clothes/Hats/SpringFall tutta hat/SpringFall_tutta_hat_front.webp';
+const tuttaHatBack = '/assets/Clothes/Hats/SpringFall tutta hat/SpringFall_tutta_hat_back.webp';
 
-import chickagoCapFront from '../../../../../../assets/Clothes/Hats/Summer chickago cap/summer_chickago_cap_front.webp'
-import chickagoCapSide from '../../../../../../assets/Clothes/Hats/Summer chickago cap/summer_chickago_cap_side.webp'
+const chickagoCapFront = '/assets/Clothes/Hats/Summer chickago cap/summer_chickago_cap_front.webp';
+const chickagoCapSide = '/assets/Clothes/Hats/Summer chickago cap/summer_chickago_cap_side.webp';
 
-import blackLenseCap from '../../../../../../assets/Clothes/Hats/Summer lense cap/black_lense_cap.webp'
+const blackLenseCap = '/assets/Clothes/Hats/Summer lense cap/black_lense_cap.webp';
 
-import primarkCap from '../../../../../../assets/Clothes/Hats/Summer primak cap/summer_primak_cap.webp';
+const primarkCap = '/assets/Clothes/Hats/Summer primak cap/summer_primak_cap.webp';
 
-import winterAdHatFront from '../../../../../../assets/Clothes/Hats/Winter ad hat/winter_ad_hat.webp'
-import winterAdHatSide from '../../../../../../assets/Clothes/Hats/Winter ad hat/winter_ad_hat_side.webp'
+const winterAdHatFront = '/assets/Clothes/Hats/Winter ad hat/winter_ad_hat.webp';
+const winterAdHatSide = '/assets/Clothes/Hats/Winter ad hat/winter_ad_hat_side.webp';
 
-import winterClassicHatFront from '../../../../../../assets/Clothes/Hats/Winter classic hat/winter_classic_hat_front.webp';
-import winterClassicHatSide from '../../../../../../assets/Clothes/Hats/Winter classic hat/winter_classic_hat_side.webp';
+const winterClassicHatFront = '/assets/Clothes/Hats/Winter classic hat/winter_classic_hat_front.webp';
+const winterClassicHatSide = '/assets/Clothes/Hats/Winter classic hat/winter_classic_hat_side.webp';
 
-import winterFleeceHatFront from '../../../../../../assets/Clothes/Hats/Winter fleece hat/winter_fleece_hat_front.webp'
-import winterFleeceHatInside from '../../../../../../assets/Clothes/Hats/Winter fleece hat/winter_fleece_hat_inside.webp'
+const winterFleeceHatFront = '/assets/Clothes/Hats/Winter fleece hat/winter_fleece_hat_front.webp';
+const winterFleeceHatInside = '/assets/Clothes/Hats/Winter fleece hat/winter_fleece_hat_inside.webp';
 
-import winterShortHatBlack from '../../../../../../assets/Clothes/Hats/Winter short hat/winter_short_hat_black.webp'
+const winterShortHatBlack = '/assets/Clothes/Hats/Winter short hat/winter_short_hat_black.webp';
+
 
 const hatsData = [
     {

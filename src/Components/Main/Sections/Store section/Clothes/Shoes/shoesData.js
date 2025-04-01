@@ -1,33 +1,32 @@
-import elevenShoesFront from '../../../../../../assets/Clothes/Shoes/man 11 shoes/man_11_shoes_front.webp'
-import elevenShoesSide from '../../../../../../assets/Clothes/Shoes/man 11 shoes/man_11_shoes_side.webp'
+const elevenShoesFront = '/assets/Clothes/Shoes/man 11 shoes/man_11_shoes_front.webp';
+const elevenShoesSide = '/assets/Clothes/Shoes/man 11 shoes/man_11_shoes_side.webp';
 
-import leonchenkoShoesFront from '../../../../../../assets/Clothes/Shoes/man leonchenko shoes/man_leonchenko_shoes_front.webp'
-import leonchenkoShoesSide from '../../../../../../assets/Clothes/Shoes/man leonchenko shoes/man_leonchenko_shoes_side.webp'
+const leonchenkoShoesFront = '/assets/Clothes/Shoes/man leonchenko shoes/man_leonchenko_shoes_front.webp';
+const leonchenkoShoesSide = '/assets/Clothes/Shoes/man leonchenko shoes/man_leonchenko_shoes_side.webp';
 
-import madiroShoesFront from '../../../../../../assets/Clothes/Shoes/man madiro shoes/man_madiro_shoes_front.webp'
-import madiroShoesSide from '../../../../../../assets/Clothes/Shoes/man madiro shoes/man_madiro_shoes_side.webp'
+const madiroShoesFront = '/assets/Clothes/Shoes/man madiro shoes/man_madiro_shoes_front.webp';
+const madiroShoesSide = '/assets/Clothes/Shoes/man madiro shoes/man_madiro_shoes_side.webp';
 
-import pavlinaShoesFront from '../../../../../../assets/Clothes/Shoes/man pavlina shoes/man_pavlina_shoes_front.webp'
-import pavlinaShoesSide from '../../../../../../assets/Clothes/Shoes/man pavlina shoes/man_pavlina_shoes_side.webp'
+const pavlinaShoesFront = '/assets/Clothes/Shoes/man pavlina shoes/man_pavlina_shoes_front.webp';
+const pavlinaShoesSide = '/assets/Clothes/Shoes/man pavlina shoes/man_pavlina_shoes_side.webp';
 
-import wingsShoesFront from '../../../../../../assets/Clothes/Shoes/man wings shoes/man_wings_shoes_front.webp'
-import wingsShoesSide from '../../../../../../assets/Clothes/Shoes/man wings shoes/man_wings_shoes_side.webp'
+const wingsShoesFront = '/assets/Clothes/Shoes/man wings shoes/man_wings_shoes_front.webp';
+const wingsShoesSide = '/assets/Clothes/Shoes/man wings shoes/man_wings_shoes_side.webp';
 
-import wElevenShoesFront from '../../../../../../assets/Clothes/Shoes/women 11 shoes/women_11_shoes_front.webp'
-import wElevenShoesSide from '../../../../../../assets/Clothes/Shoes/women 11 shoes/women_11_shoes_side.webp'
+const wElevenShoesFront = '/assets/Clothes/Shoes/women 11 shoes/women_11_shoes_front.webp';
+const wElevenShoesSide = '/assets/Clothes/Shoes/women 11 shoes/women_11_shoes_side.webp';
 
-import bellaShoesFront from '../../../../../../assets/Clothes/Shoes/women bella shoes/women_bella_shoes_front.webp'
-import bellaShoesSide from '../../../../../../assets/Clothes/Shoes/women bella shoes/women_bella_shoes_side.webp'
+const bellaShoesFront = '/assets/Clothes/Shoes/women bella shoes/women_bella_shoes_front.webp';
+const bellaShoesSide = '/assets/Clothes/Shoes/women bella shoes/women_bella_shoes_side.webp';
 
-import eternityShoesFront from '../../../../../../assets/Clothes/Shoes/women eternity shoes/women_eternity_shoes_front.webp'
-import eternityShoesSide from '../../../../../../assets/Clothes/Shoes/women eternity shoes/women_eternity_shoes_side.webp'
+const eternityShoesFront = '/assets/Clothes/Shoes/women eternity shoes/women_eternity_shoes_front.webp';
+const eternityShoesSide = '/assets/Clothes/Shoes/women eternity shoes/women_eternity_shoes_side.webp';
 
-import wMadiroShoesFront from '../../../../../../assets/Clothes/Shoes/women madiro shoes/women_madiro_shoes_front.webp'
-import wMadiroShoesSide from '../../../../../../assets/Clothes/Shoes/women madiro shoes/women_madiro_shoes_side.webp'
+const wMadiroShoesFront = '/assets/Clothes/Shoes/women madiro shoes/women_madiro_shoes_front.webp';
+const wMadiroShoesSide = '/assets/Clothes/Shoes/women madiro shoes/women_madiro_shoes_side.webp';
 
-import issaShoesFront from '../../../../../../assets/Clothes/Shoes/women issa shoes/women_isse_shoes_front.webp'
-import issaShoesSide from '../../../../../../assets/Clothes/Shoes/women issa shoes/women_isse_shoes_side.webp'
-
+const issaShoesFront = '/assets/Clothes/Shoes/women issa shoes/women_isse_shoes_front.webp';
+const issaShoesSide = '/assets/Clothes/Shoes/women issa shoes/women_isse_shoes_side.webp';
 const shoesData = [
     // Men Shoes
     {

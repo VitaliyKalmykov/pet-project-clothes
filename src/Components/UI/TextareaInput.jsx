@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import typingSound from '../../assets/audio/type.mp3';
 
 const TextareaInput = ({ name, value, onChange, maxLength, title }) => {
-    const [audio] = useState(new Audio(typingSound)); // Ініціалізуємо аудіо один раз
+    const [audio] = useState(new Audio("/assets/audio/type.mp3")); // Завантаження з public/audio/type.mp3
     const textareaRef = useRef(null); // Створюємо референс для текстового поля
 
     // Функція для відтворення звуку при натисканні клавіші

@@ -1,5 +1,4 @@
 import React from 'react';
-import symbolDefs from '../../../../assets/symbol-defs.svg';
 
 const socialLinks = [
     { id: 'telegram', href: 'https://t.me/Vitalii_Kalmykov_Work', label: 'Telegram' },
@@ -15,7 +14,7 @@ const ContactsItems = () => {
                 <div key={id} className="contacts-items__container">
                     <a href={href} target="_blank" rel="noopener noreferrer" className="contacts-items__link">
                         <svg className="contacts-items__icon">
-                            <use xlinkHref={`${symbolDefs}#icon-${id}`} />
+                            <use xlinkHref={`/assets/symbol-defs.svg#icon-${id}`} />
                         </svg>
                     </a>
                     <p className="contacts-items__label">{label}</p>

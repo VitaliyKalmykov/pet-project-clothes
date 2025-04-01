@@ -1,8 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import typeSound from '../../assets/audio/type.mp3';
 
 const TextInput = ({ type, id, name, label, value, onChange, volume = 0.2 }) => {
-    const audioRef = useRef(new Audio(typeSound)); // Створюємо референс для аудіо
+    const audioRef = useRef(new Audio("/assets/audio/type.mp3")); // Завантаження з public/audio/type.mp3
     const [isAudioPlaying, setIsAudioPlaying] = useState(false); // Стан для управління відтворенням звуку
     const inputRef = useRef(null); // Створюємо референс для інпуту
 

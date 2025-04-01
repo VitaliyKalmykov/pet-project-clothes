@@ -6,8 +6,6 @@ import Store from "./Sections/Store section/Store";
 import Details from "./Sections/Details section/Details";
 import OfflineStores from "./Sections/Offline section/OfflineStores";
 import Contact from "./Sections/Contact section/Contact";
-import themeDark from "../../assets/backgrounds/body_background_dark.mp4";
-import themeLight from "../../assets/backgrounds/body_background_white.mp4";
 
 const Main = ({ isModalArr, setIsModalArr }) => {
     const { theme } = useContext(ThemeContext);
@@ -33,11 +31,23 @@ const Main = ({ isModalArr, setIsModalArr }) => {
 
             {/* Фонове відео */}
             <div className="video-background">
-                <video autoPlay loop muted playsInline className={theme === "dark" ? "active" : "hidden"}>
-                    <source src={themeDark} type="video/mp4" />
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className={theme === "dark" ? "active" : "hidden"}
+                >
+                    <source src="/assets/backgrounds/body_background_dark.mp4" type="video/mp4" />
                 </video>
-                <video autoPlay loop muted playsInline className={theme === "light" ? "active" : "hidden"}>
-                    <source src={themeLight} type="video/mp4" />
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className={theme === "light" ? "active" : "hidden"}
+                >
+                    <source src="/assets/backgrounds/body_background_white.mp4" type="video/mp4" />
                 </video>
             </div>
         </main>
