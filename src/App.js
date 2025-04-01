@@ -39,7 +39,6 @@ function App() {
 
     return (
         <>
-            <p>123j1io23jo12i3</p>
             {isLoading ? ( // Показуємо індикатор завантаження
                 <div className="loading-spinner">
                     Please, be patient, I'm just an amateur developer with no servers so it will take time.

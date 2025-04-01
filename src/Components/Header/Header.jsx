@@ -13,6 +13,7 @@ const Header = ({ setIsModal, setModalType }) => {
     return (
         <header className="header">
             <div className="container">
+                <p>TESTESTSTSTSTSTSTSTSTTS</p>
                 <div className="header__container">
                     <Link to="/Store">
                         <img className="header__logo" src="/assets/logo.png" alt="logo" />
