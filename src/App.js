@@ -9,8 +9,8 @@ function App() {
     const [isModal, setIsModal] = useState(false);
     const [modalType, setModalType] = useState(null);
     const [isModalArr, setIsModalArr] = useState([]);
-    const [isLoading, setIsLoading] = useState(true); // Стейт для завантаження
 
+    //звук на клік
     useEffect(() => {
         const handleClick = () => {
             const audio = new Audio("/assets/audio/click.mp3"); // Прямий шлях до файлу в public
@@ -28,23 +28,8 @@ function App() {
         };
     }, []);
 
-    useEffect(() => {
-        const loadAssets = async () => {
-            // Ваші асинхронні завдання
-            setIsLoading(false);
-        };
-
-        loadAssets();
-    }, []);
-
     return (
         <>
-            {isLoading ? ( // Показуємо індикатор завантаження
-                <div className="loading-spinner">
-                    Please, be patient, I'm just an amateur developer with no servers so it will take time.
-                    {/* Тут можна додати спінер або інший індикатор */}
-                </div>
-            ) : (
                 <ThemeProvider>
                     <Router>
                         <Header setIsModal={setIsModal} setModalType={setModalType} />
@@ -62,7 +47,7 @@ function App() {
                         />
                     )}
                 </ThemeProvider>
-            )}
+            )
         </>
     );
 }
