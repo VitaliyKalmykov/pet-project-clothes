@@ -12,6 +12,8 @@ function App() {
     const [isModal, setIsModal] = useState(false);
     const [modalType, setModalType] = useState(null);
     const [isModalArr, setIsModalArr] = useState([]);
+    const [isLoading, setIsLoading] = useState(true); // Стейт для завантаження
+
 
     useEffect(() => {
         const handleClick = () => {
@@ -28,26 +30,43 @@ function App() {
         };
     }, []);
 
+    useEffect(() => {
+        const loadAssets = async () => {
+            // Ваші асинхронні завдання
+            setIsLoading(false);
+        };
+
+        loadAssets();
+    }, []);
+
 
     return (
         <>
-            <ThemeProvider>
-           <Router>
-               <Header setIsModal={setIsModal} setModalType={setModalType} />
-               <Main
-                   isModalArr={isModalArr}
-                   setIsModalArr={setIsModalArr}
-               />
-           </Router>
-           {isModal && <Modal
-               setIsModal={setIsModal}
-               modalType={modalType}
-               isModalArr={isModalArr}
-               setIsModalArr={setIsModalArr}
-           />}
-            </ThemeProvider>
+            {isLoading ? ( // Показуємо індикатор завантаження
+                <div className="loading-spinner">
+                    Please, be patient, I'm just an amateur developer with no servers so it will take time.
+                    {/* Тут можна додати спінер або інший індикатор */}
+                </div>
+            ) : (
+                <ThemeProvider>
+                    <Router>
+                        <Header setIsModal={setIsModal} setModalType={setModalType} />
+                        <Main
+                            isModalArr={isModalArr}
+                            setIsModalArr={setIsModalArr}
+                        />
+                    </Router>
+                    {isModal && <Modal
+                        setIsModal={setIsModal}
+                        modalType={modalType}
+                        isModalArr={isModalArr}
+                        setIsModalArr={setIsModalArr}
+                    />}
+                </ThemeProvider>
+            )}
         </>
-  );
+    );
 }
+
 
 export default App;
