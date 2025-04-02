@@ -53,6 +53,7 @@
 
   &__label {
     font-size: 2rem;
+    color: #333;
     @media screen and (min-width: $bp-tablet) {
       font-size: 3rem;
     }

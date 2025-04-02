@@ -17,7 +17,8 @@ const ContactsItems = () => {
                             <use xlinkHref={`/assets/symbol-defs.svg#icon-${id}`} />
                         </svg>
                     </a>
-                    <p className="contacts-items__label">{label}</p>
+                    <a href={href} target={"_blank"} rel='noopener noreferrer'><p className="contacts-items__label">{label}</p>
+                    </a>
                 </div>
             ))}
         </div>

@@ -57,7 +57,7 @@ const DetailsCommentsForm = ({ addComment }) => {
             </div>
 
 
-            {error && <p className="error">{error}</p>}
+            {error && <p className="details-comments-form__error">{error}</p>}
             <div>
                 <TextInput
                     label={'Name'}
