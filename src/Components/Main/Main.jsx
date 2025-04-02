@@ -6,6 +6,7 @@ import Store from "./Sections/Store section/Store";
 import Details from "./Sections/Details section/Details";
 import OfflineStores from "./Sections/Offline section/OfflineStores";
 import Contact from "./Sections/Contact section/Contact";
+import MainLoader from "./MainLoader";
 
 const Main = ({ isModalArr, setIsModalArr }) => {
     const { theme } = useContext(ThemeContext);
@@ -13,6 +14,8 @@ const Main = ({ isModalArr, setIsModalArr }) => {
 
     return (
         <main>
+            {/* прелоадер */}
+             <MainLoader/>
             <motion.div
                 key={location.key}
                 initial={{ opacity: 0, x: 100 }}

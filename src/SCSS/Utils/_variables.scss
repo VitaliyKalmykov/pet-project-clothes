@@ -14,11 +14,13 @@
 /* Світла тема */
 [data-theme='light'] {
   --color-primary-light: black; /* Світло-сірий, м'який білий */
+  --color-primary-bg: white;
 }
 
 /* Темна тема */
 [data-theme='dark'] {
   --color-primary-light: white; /* Темно-синій */
+  --color-primary-bg: black;
 }
 
 $bp-mobile: 480px;
