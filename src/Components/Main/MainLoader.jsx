@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const MainLoader = () => {
     const [isLoading, setIsLoading] = useState(true);
-    const [seconds, setSeconds] = useState(5);
+    const [seconds, setSeconds] = useState(7);
 
     useEffect(() => {
         document.body.style.overflow = 'hidden';
@@ -14,7 +14,7 @@ const MainLoader = () => {
         const timeout = setTimeout(() => {
             setIsLoading(false);
             document.body.style.overflow = '';
-        }, 5000);
+        }, 7000);
 
         return () => {
             clearInterval(timer);
